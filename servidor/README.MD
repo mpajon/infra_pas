@@ -1,5 +1,8 @@
+# Servidor 172.17.134.1 (mandalor.asnw.inetum.com)
 
-# Para ver espacio de volúmenes físicos, virtuales...
+Información sobre el servidor
+
+## Para ver espacio de volúmenes físicos, virtuales...
 
     $ vgs
 
@@ -27,10 +30,10 @@
     varlv  ubuntu-vg -wi-ao----   5,00g
 ```
 
-# Para ver el espacio de los directorios que mas ocupan
+## Para ver el espacio de los directorios que mas ocupan
 
     $ ncdu
 
-# Para ampliar el espacio de los directorios
+## Para ampliar el espacio de los directorios
     
     $ FS="/dev/mapper/ubuntu--vg-varlv" && lvextend -L+45G $FS -r
