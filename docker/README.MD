@@ -1,7 +1,4 @@
-sudo  systemctl status docker.service
-sudo  systemctl daemon-reload
-sudo  systemctl restart docker.service
-sudo  systemctl status docker.service
+# Docker
 
 ## Para el demonio de docker
     
@@ -11,7 +8,6 @@ sudo  systemctl status docker.service
 ## Arrancar el demonio de docker
     
     $ sudo systemctl start docker.service
-    $ sudo systemctl stop docker.socket
 
 ## Sobreescritura de la configuración del demonio
 
