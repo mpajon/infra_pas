@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>	
+	
+	<mirrors>
+		<mirror>
+			<id>nexus</id>
+			<mirrorOf>*</mirrorOf>
+			<url>http://nexus:8081/repository/public</url>
+		</mirror>				
+	</mirrors>
+	
+	<servers>
+
+		<server>  
+			<id>inhouse.releases</id>
+			<username>mantenimiento</username>
+			<password>mantenimiento</password>
+		</server>
+ 
+		<server>  
+			<id>inhouse.snapshots</id>
+			<username>mantenimiento</username>
+			<password>mantenimiento</password>
+		</server> 
+
+	</servers>
+	
+</settings>
+
