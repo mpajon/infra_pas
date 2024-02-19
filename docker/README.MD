@@ -44,6 +44,8 @@ Añadir al fichero _/etc/docker/daemon.json_
    "data-root": "/docker/daemon"
 ```
 
-## Copiar configuración de docker de <origen> a <destino>
+## Copiar configuración de docker de _origen_ a _destino_
+
+    $ sudo rsync -aqxP origen destino
 
     $ sudo rsync -aqxP /docker/daemon /var/lib/docker/
