@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "0688dc85-dc94-4c9b-95a9-3dbc47e05183",
 		"name": "Infra Mandalor",
-		"description": "Grupo Educación ==> 11\n\nGrupo Justica ==> 19",
+		"description": "root ==> 1  \npablo.suarez-cabal ==> 2\n\nmarcos.pajon ==> 3\n\nroberto.cascos ==> 9  \nrodrigo.gonzalez-diaz ==> 11  \n\\----------------------------\n\nGrupo PAS ==> 10\n\nGrupo Educación ==> 11\n\nGrupo Justica ==> 19\n\nGrupo Laboratorio ==> 22\n\n\\----------------------------\n\nAccess_level ==> 50 ==> Owner\n\nAccess_level ==> 40 ==> Maintainer\n\nAccess_level ==> 30 ==> Developer",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "11446689",
 		"_collection_link": "https://interstellar-water-670456.postman.co/workspace/COVID~f78d9cdb-3881-41de-a707-257ceaba7329/collection/11446689-0688dc85-dc94-4c9b-95a9-3dbc47e05183?action=share&source=collection_link&creator=11446689"
@@ -96,7 +96,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/19/members",
+					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/10/members",
 					"protocol": "https",
 					"host": [
 						"gitlab",
@@ -108,7 +108,7 @@
 						"api",
 						"v4",
 						"groups",
-						"19",
+						"10",
 						"members"
 					]
 				}
@@ -139,7 +139,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Roberto Carlos Cascos Fernádez\",    \r\n    \"email\": \"roberto.cascos@inetum.com\",\r\n    \"username\": \"roberto.cascos\",\r\n    \"commit_email\": \"roberto.cascos@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
+					"raw": "{\r\n    \"name\": \"Usuario prueba\",    \r\n    \"email\": \"rodrigo.gonzalez-diaz@inetum.com\",\r\n    \"username\": \"rodrigo.gonzalez-diaz\",\r\n    \"commit_email\": \"rodrigo.gonzalez-diaz@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -234,7 +234,7 @@
 			"response": []
 		},
 		{
-			"name": "Gitlab - Añadir usuario al grupo PAS",
+			"name": "Gitlab - Añadir usuario DEVELOPER al grupo PAS",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -245,7 +245,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/{{group_id}}/members?user_id={{create_user_id}}&access_level=40",
+					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/10/members?user_id={{create_user_id}}&access_level=30",
 					"protocol": "https",
 					"host": [
 						"gitlab",
@@ -257,7 +257,48 @@
 						"api",
 						"v4",
 						"groups",
-						"{{group_id}}",
+						"10",
+						"members"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "{{create_user_id}}"
+						},
+						{
+							"key": "access_level",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gitlab - Añadir usuario MAINTEINER al grupo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Private-Token",
+						"value": "{{Private-Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/22/members?user_id={{create_user_id}}&access_level=40",
+					"protocol": "https",
+					"host": [
+						"gitlab",
+						"asnw",
+						"inetum",
+						"com"
+					],
+					"path": [
+						"api",
+						"v4",
+						"groups",
+						"22",
 						"members"
 					],
 					"query": [
@@ -275,7 +316,7 @@
 			"response": []
 		},
 		{
-			"name": "Gitlab - Añadir usuario al grupo",
+			"name": "Gitlab - Añadir usuario MAINTEINER al grupo sandbox",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -286,7 +327,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/{{group_id}}/members?user_id={{create_user_id}}&access_level=40",
+					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/24/members?user_id={{create_user_id}}&access_level=40",
 					"protocol": "https",
 					"host": [
 						"gitlab",
@@ -298,7 +339,7 @@
 						"api",
 						"v4",
 						"groups",
-						"{{group_id}}",
+						"24",
 						"members"
 					],
 					"query": [

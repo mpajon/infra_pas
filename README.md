@@ -45,6 +45,8 @@ Probar la configuración
 
     $ haproxy -f /etc/haproxy/haproxy.cfg -c
 
+    $ sudo systemctl restart haproxy
+
 # Sonar
 
 Ejecutar en el host:
