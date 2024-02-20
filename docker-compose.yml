@@ -134,8 +134,8 @@ services:
     - TZ=Europe/Madrid
     - GITLAB_TIMEZONE=Madrid
 
-    - GITLAB_HTTPS=false
-    - SSL_SELF_SIGNED=false
+    - GITLAB_HTTPS=true
+    - SSL_SELF_SIGNED=true
 
     - GITLAB_HOST=${GITLAB_HOST}
     - GITLAB_PORT=${GITLAB_PORT}
