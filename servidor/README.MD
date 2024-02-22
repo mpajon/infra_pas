@@ -32,6 +32,8 @@ Información sobre el servidor
 
 ## Para ver el espacio de los directorios que mas ocupan
 
+    $ sudo ncdu
+    
     $ ncdu
 
 ## Para ampliar el espacio de los directorios

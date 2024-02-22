@@ -9,352 +9,562 @@
 	},
 	"item": [
 		{
-			"name": "Gitlab - Obtener usuarios",
-			"event": [
+			"name": "Gitlab",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Usuario de pruebas\",    \r\n    \"email\": \"usuario.pruebas@inetum.com\",\r\n    \"username\": \"usuario.pruebas\",\r\n    \"commit_email\": \"usuario.pruebas@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "Gitlab - Obtener usuarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/users/",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
 					],
-					"path": [
-						"api",
-						"v4",
-						"users",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Obtener usuarios de grupo",
-			"event": [
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Usuario de pruebas\",    \r\n    \"email\": \"usuario.pruebas@inetum.com\",\r\n    \"username\": \"usuario.pruebas\",\r\n    \"commit_email\": \"usuario.pruebas@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/users/",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Usuario de pruebas\",    \r\n    \"email\": \"usuario.pruebas@inetum.com\",\r\n    \"username\": \"usuario.pruebas\",\r\n    \"commit_email\": \"usuario.pruebas@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "Gitlab - Obtener usuarios de grupo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/10/members",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
 					],
-					"path": [
-						"api",
-						"v4",
-						"groups",
-						"10",
-						"members"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Crear Usuario",
-			"event": [
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Usuario de pruebas\",    \r\n    \"email\": \"usuario.pruebas@inetum.com\",\r\n    \"username\": \"usuario.pruebas\",\r\n    \"commit_email\": \"usuario.pruebas@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/10/members",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"10",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.environment.set(\"create_user_id\", pm.response.json().id);"
+					"name": "Gitlab - Borrar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
 						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Usuario prueba\",    \r\n    \"email\": \"rodrigo.gonzalez-diaz@inetum.com\",\r\n    \"username\": \"rodrigo.gonzalez-diaz\",\r\n    \"commit_email\": \"rodrigo.gonzalez-diaz@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/users/{{create_user_id}}",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"users",
+								"{{create_user_id}}"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/users",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
-					],
-					"path": [
-						"api",
-						"v4",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Forzar Modificar contraseña",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"password\": \"Mandaloriano100\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Gitlab - Crear Usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"create_user_id\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Adrian Iglesias García\",\r\n    \"email\": \"adrian.iglesias@inetum.com\",\r\n    \"username\": \"adrian.iglesias\",\r\n    \"commit_email\": \"adrian.iglesias@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/users",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"users"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/users/{{create_user_id}}",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
-					],
-					"path": [
-						"api",
-						"v4",
-						"users",
-						"{{create_user_id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Borrar Usuario",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/users/{{create_user_id}}",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
-					],
-					"path": [
-						"api",
-						"v4",
-						"users",
-						"{{create_user_id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Añadir usuario DEVELOPER al grupo PAS",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/10/members?user_id={{create_user_id}}&access_level=30",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
-					],
-					"path": [
-						"api",
-						"v4",
-						"groups",
-						"10",
-						"members"
-					],
-					"query": [
-						{
-							"key": "user_id",
-							"value": "{{create_user_id}}"
+				{
+					"name": "Gitlab - Forzar Modificar contraseña",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Mandaloriano100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "access_level",
-							"value": "30"
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/users/{{create_user_id}}",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"users",
+								"{{create_user_id}}"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Añadir usuario MAINTEINER al grupo",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/22/members?user_id={{create_user_id}}&access_level=40",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
-					],
-					"path": [
-						"api",
-						"v4",
-						"groups",
-						"22",
-						"members"
-					],
-					"query": [
-						{
-							"key": "user_id",
-							"value": "{{create_user_id}}"
-						},
-						{
-							"key": "access_level",
-							"value": "40"
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario DEVELOPER al grupo PAS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/10/members?user_id={{create_user_id}}&access_level=30",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"10",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "30"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gitlab - Añadir usuario MAINTEINER al grupo sandbox",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Private-Token",
-						"value": "{{Private-Token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/24/members?user_id={{create_user_id}}&access_level=40",
-					"protocol": "https",
-					"host": [
-						"gitlab",
-						"asnw",
-						"inetum",
-						"com"
-					],
-					"path": [
-						"api",
-						"v4",
-						"groups",
-						"24",
-						"members"
-					],
-					"query": [
-						{
-							"key": "user_id",
-							"value": "{{create_user_id}}"
-						},
-						{
-							"key": "access_level",
-							"value": "40"
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario OWNER al grupo Justicia",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/19/members?user_id={{create_user_id}}&access_level=50",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"19",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "50"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario OWNER al grupo Educacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/11/members?user_id={{create_user_id}}&access_level=40",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"11",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario OWNER al grupo Laboratorio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/22/members?user_id={{create_user_id}}&access_level=40",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"22",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario DEVELOPER al grupo Justicia",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/19/members?user_id={{create_user_id}}&access_level=30",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"19",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario DEVELOPER al grupo Educacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/11/members?user_id={{create_user_id}}&access_level=30",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"11",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario DEVELOPER al grupo Laboratorio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/22/members?user_id={{create_user_id}}&access_level=30",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"22",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario MAINTEINER al grupo Sandbox",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/24/members?user_id={{create_user_id}}&access_level=40",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"24",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
