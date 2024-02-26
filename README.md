@@ -38,15 +38,6 @@ Cambiar los permisos al direcorio _jenkins_
 
 El proxy se establece en el primer arranque
 
-
-# HAProxy
-
-Probar la configuración
-
-    $ haproxy -f /etc/haproxy/haproxy.cfg -c
-
-    $ sudo systemctl restart haproxy
-
 # Sonar
 
 Ejecutar en el host:

@@ -1,4 +1,3 @@
-
 # NGINX
 
 Cambiar en el default el puerto por el que vamos a escuchar y la ruta que queremos servir
