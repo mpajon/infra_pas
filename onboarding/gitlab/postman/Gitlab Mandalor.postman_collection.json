@@ -172,7 +172,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Adrian Iglesias García\",\r\n    \"email\": \"adrian.iglesias@inetum.com\",\r\n    \"username\": \"adrian.iglesias\",\r\n    \"commit_email\": \"adrian.iglesias@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
+							"raw": "{\r\n    \"name\": \"Pablo Sergio Requejo Castro\",\r\n    \"email\": \"pablo.requejo@inetum.com\",\r\n    \"username\": \"pablo.requejo\",\r\n    \"commit_email\": \"pablo.requejo@inetum.com\",\r\n    \"password\": \"Mandaloriano100\",\r\n    \"is_admin\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -548,6 +548,47 @@
 								"v4",
 								"groups",
 								"24",
+								"members"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{create_user_id}}"
+								},
+								{
+									"key": "access_level",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gitlab - Añadir usuario MAINTEINER al grupo Mandalore",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Private-Token",
+								"value": "{{Private-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gitlab.asnw.inetum.com/api/v4/groups/70/members?user_id={{create_user_id}}&access_level=40",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"asnw",
+								"inetum",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"groups",
+								"70",
 								"members"
 							],
 							"query": [

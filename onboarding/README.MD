@@ -11,7 +11,7 @@
 | 10888751E | Manuel Alejandro Magadan Blanco	| alejandro.magadan@inetum.com      | X Developer           |
 | 71645501H | Marcos Pajón Ferreiro	            | marcos.pajon@inetum.com           | X Owner               |
 | 71657152P | Pablo	Suárez Cabal	            | pablo.suarez-cabal@inetum.com     | X Owner EDU           |
-| 10861504F | Pablo Sergio Requejo	Castro	    | pablo.requejo@inetum.com          ||
+| 10861504F | Pablo Sergio Requejo	Castro	    | pablo.requejo@inetum.com          | X Developer           |
 | 10887634D | Roberto Carlos Cascos Fernández	| roberto.cascos@inetum.com         | X Owner JUS           |
 | 71767261Q | Rodrigo González Díaz	            | rodrigo.gonzalez-diaz@inetum.com  | X Owner LAB           |
 | 71655951A | Rubén	Iglesias García	            | ruben.iglesias-garcia@inetum.com  | X Owner               |
