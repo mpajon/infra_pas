@@ -1,0 +1,10 @@
+version: '2.3'
+
+services:
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:v16.8.1
+    container_name: gitlab-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKER_PATH}/gitlab/gitlab-runner/config:/etc/gitlab-runner        
