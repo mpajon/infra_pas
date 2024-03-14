@@ -10,7 +10,5 @@ services:
         - KEYCLOAK_PASSWORD=pikathnoOoEezsSc0l8ZCfZs
       ports:
         - "18443:8443"
-        - "18080:8080"
-        - "19990:9990"
       volumes:
         - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/
