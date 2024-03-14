@@ -174,3 +174,20 @@ services:
     - IMAP_PASS=password
     - IMAP_SSL=true
     - IMAP_STARTTLS=false
+
+  keycloak:
+      image: quay.io/keycloak/keycloak:15.0.2
+      container_name: keycloak
+      environment:
+        - KEYCLOAK_USER=admin
+        - KEYCLOAK_PASSWORD=pikathnoOoEezsSc0l8ZCfZs
+      ports:
+        - ${KEYCLOAK_PORT}:8080
+      extra_hosts:
+        - ldapeducainteg.princast.org:10.154.48.11        
+        - ldapmetaint.princast.org:10.154.48.13
+        - intgiddj.sespa.es:10.154.212.6
+      volumes:
+        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
+        - ${DOCKER_PATH}/keycloak/standalone.xml:/opt/jboss/keycloak/standalone/configuration/standalone.xml
+        - ${DOCKER_PATH}/keycloak/config:/opt/jboss/config/
