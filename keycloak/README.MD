@@ -1,0 +1,1 @@
+mkdir -m 777 -p keycloak/data && mkdir -m 777 -p keycloak/config

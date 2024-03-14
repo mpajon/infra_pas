@@ -6,6 +6,26 @@ Fichero de configuración
 
 Probar la configuración
 
-    $ haproxy -f /etc/haproxy/haproxy.cfg -c
+    $ sudo haproxy -f /etc/haproxy/haproxy.cfg -c
 
     $ sudo systemctl restart haproxy
+
+Log
+
+    /etc/rsyslog.conf
+
+    Descomentar
+    
+    # provides TCP syslog reception
+    module(load="imtcp")
+    input(type="imtcp" port="514")
+
+    $ sudo systemctl restart rsyslog
+
+Probar:
+    
+    $ echo "prueba" | nc 127.0.0.1 514
+
+    $ tail -f /var/log/syslog
+
+    $ sudo journalctl -u haproxy.service -f
