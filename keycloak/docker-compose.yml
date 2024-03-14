@@ -2,39 +2,14 @@ version: '2.3'
 
 services:
 
-  keycloak_db:
-    image: postgres:latest
-    ports:
-      - "15432:15432"
-    environment:
-        - POSTGRES_DB=keycloak
-        - POSTGRES_USER=keycloak
-        - POSTGRES_PASSWORD=6jhVPaQWhgEMl0sXPnNmkLfS
-        - POSTGRES_ROOT_PASSWORD=qgZqZGdoe5loJ0OrZvq36LBr
-    volumes:
-      - ${DOCKER_PATH}/keycloak/postgresql:/var/lib/postgresql
-      - ${DOCKER_PATH}/keycloak/postgresql_data:/var/lib/postgresql/data
-
   keycloak:
       image: quay.io/keycloak/keycloak:15.0.2
       environment:
-        - KEYCLOAK_LOGLEVEL=DEBUG
-        - DB_VENDOR=postgres
-        - DB_USER=keycloak
-        - DB_DATABASE=keycloak
-        - DB_PASSWORD=6jhVPaQWhgEMl0sXPnNmkLfS
-        - DB_PORT=5432
-        - DB_ADDR=keycloak_db
         - KEYCLOAK_USER=admin
         - KEYCLOAK_PASSWORD=pikathnoOoEezsSc0l8ZCfZs
-        - KEYCLOAK_STATISTICS=all
-      links:
-        - keycloak_db:postgres
       ports:
         - "18443:8443"
         - "18080:8080"
         - "19990:9990"
       volumes:
-        - ${DOCKER_PATH}/keycloak/data:/data
-        - ${DOCKER_PATH}/keycloak/providers:/opt/jboss/keycloak/providers
-        - ${DOCKER_PATH}/keycloak/standalone/configuration:/opt/jboss/keycloak/standalone/configuration
+        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
