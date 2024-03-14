@@ -13,4 +13,4 @@ services:
         - "18080:8080"
         - "19990:9990"
       volumes:
-        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
+        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/
