@@ -15,5 +15,5 @@ services:
         - ldapmetaint.princast.org:10.154.48.13
         - intgiddj.sespa.es:10.154.212.6
       volumes:
-        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
+        - ${DOCKER_PATH}/keycloak:/opt/jboss/keycloak/standalone/
         - ${DOCKER_PATH}/keycloak/config:/opt/jboss/config/
