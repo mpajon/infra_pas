@@ -179,8 +179,8 @@ services:
       image: quay.io/keycloak/keycloak:15.0.2
       container_name: keycloak
       environment:
-        - KEYCLOAK_USER=admin
-        - KEYCLOAK_PASSWORD=pikathnoOoEezsSc0l8ZCfZs
+        - KEYCLOAK_USER=${KEYCLOAK_USER}
+        - KEYCLOAK_PASSWORD=${KEYCLOAK_PASS}
       ports:
         - ${KEYCLOAK_PORT}:8080
       extra_hosts:
