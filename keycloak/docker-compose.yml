@@ -11,4 +11,5 @@ services:
       ports:
         - "18443:8443"
       volumes:
-        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/
+        - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
+        - ${DOCKER_PATH}/keycloak/config:/opt/jboss/keycloak/
