@@ -1,0 +1,69 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overridden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+#
+# More information on profiles: http://www.jhipster.tech/profiles/
+# More information on configuration properties: http://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+    application:
+        name: mntpa-edu-gepep-bo
+    main:
+        allow-bean-definition-overriding: true
+        allow-circular-references: true
+
+    messages:
+        basename: messages
+    
+    reports:
+        basename: reports
+    
+    config:
+        basename: config
+
+    profiles:
+        active: #spring.profiles.active#
+
+    cache:
+        jcache:
+           config: classpath:ehcache.xml
+
+    jackson:
+      serialization.write_dates_as_timestamps: false
+      default-property-inclusion: NON_NULL
+      serialization.fail-on-empty-beans: false
+
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+        show-sql: true
+        properties:
+             hibernate.generate_statistics: false
+             hibernate.cache.region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+             hibernate.javax.cache.provider: org.ehcache.jsr107.EhcacheCachingProvider
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+
+info:
+  app:
+    name: '#project.name#'
+    version: '#project.version#'
+    date: '#timestamp#'
+
+application:
+  cors:
+    allowed-origins:
+      - http://localhost:4200
+    allowedMethods:
+      - "*"
+    allowedHeaders:
+      - "*"

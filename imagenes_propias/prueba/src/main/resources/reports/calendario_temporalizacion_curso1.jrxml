@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="calendario_temporalizacion_curso1" pageWidth="802" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="5" whenResourceMissingType="Empty" uuid="d2ddae0b-4441-4a8e-8148-df6bb8ff4574">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES1" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES2" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES3" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES4" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES5" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES6" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES7" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES9" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES10" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES11" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES12" class="java.lang.Object"/>
+	<parameter name="P_CURSO1" class="es.princast.gepep.domain.reports.Curso"/>
+	<parameter name="P_COLOR_NO_LECTIVO" class="java.lang.String"/>
+	<parameter name="P_COLOR_LECTIVO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(9) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="8c051835-7b0d-4255-a1c6-0e0102703f96"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(9)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioIni()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES9}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(10) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="6106e438-1856-4818-adec-549cfb28b367"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(10)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioIni()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES10}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(11) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="fcbfc8dd-afc4-428d-b036-3fb689283cfa"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(11)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioIni()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES11}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(11) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="b48f9416-f761-4ef9-a6fb-f23f73cbd79c"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(12)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioIni()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES12}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(1) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="6c93021f-20bb-4b2e-987b-20b3d8dfbcbc"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(1)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES1}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(2) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="5c2ad04d-0c79-429f-97d8-889b37e21334"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(2)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES2}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(3) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="941421c2-fd02-4239-aa17-b8d3b5388a29"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(3)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES3}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(4) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="df04db73-de4f-4948-9269-f9e42a976002"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(4)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES4}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(5) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="ba5f3972-0539-4c72-9c03-e486b82aedf3"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(5)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES5}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(6) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="5c13c569-aef5-442c-a1e0-719f86f6dda4"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(6)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES6}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(7) != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="39" uuid="a593fe70-8a49-4aff-95d8-99485f070830"/>
+				<subreportParameter name="P_MES">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getLMeses().get(7)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_ANIO">
+					<subreportParameterExpression><![CDATA[$P{P_CURSO1}.getAnioFin()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES7}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="30">
+			<staticText>
+				<reportElement x="12" y="9" width="118" height="18" uuid="5fe9d214-9824-47f9-b080-d13fc8054885"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL HORAS CURSO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="9" width="57" height="18" uuid="61f89f82-f89d-4e9e-bd9d-c3d1610c9417"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{P_CURSO1}.getTotalHoras()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

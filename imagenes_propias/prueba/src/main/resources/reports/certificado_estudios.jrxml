@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificado_estudios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b56e9d7e-a628-443a-ae06-6fb3df958240">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO1" class="Object" isForPrompting="false"/>
+	<parameter name="P_LOGO2" class="Object" isForPrompting="false"/>
+	<parameter name="P_DOCUMENTO" class="es.princast.gepep.domain.Documento" isForPrompting="false"/>
+	<parameter name="P_MARCA_AGUA" class="Object" isForPrompting="false"/>
+	<parameter name="P_CONVENIO" class="java.lang.String"/>
+	<parameter name="P_ANEXO" class="java.lang.String"/>
+	<parameter name="P_PARRAFO1" class="java.lang.String"/>
+	<parameter name="P_CERTIFICA" class="java.lang.String"/>
+	<parameter name="P_PARRAFO2" class="java.lang.String"/>
+	<parameter name="P_PARRAFO_FIRMA" class="java.lang.String"/>
+	<parameter name="P_FIRMA_SECRETARIO" class="java.lang.String"/>
+	<parameter name="P_VB" class="java.lang.String"/>
+	<parameter name="P_DIRECTOR" class="java.lang.String"/>
+	<parameter name="P_FDO_DIRECTOR" class="java.lang.String"/>
+	<parameter name="P_SELLO_CENTRO" class="java.lang.String"/>
+	<parameter name="P_PARRAFO3" class="java.lang.String"/>
+	<parameter name="P_PARRAFO4" class="java.lang.String"/>
+	<parameter name="P_TUTOR_CENTRO" class="java.lang.String"/>
+	<parameter name="P_FDO_TUTOR_CEN" class="java.lang.String"/>
+	<parameter name="P_TUTOR_EMPRESA" class="java.lang.String"/>
+	<parameter name="P_FDO_TUTOR_EMP" class="java.lang.String"/>
+	<parameter name="P_SELLO_CENTROEDU" class="java.lang.String"/>
+	<parameter name="P_SELLO_EMPRESA" class="java.lang.String"/>
+	<parameter name="P_SUBREPORT" class="java.lang.Object"/>
+	<parameter name="P_LISTA_REALIZACIONES" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<background>
+		<band height="800" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="21" y="128" width="519" height="531" uuid="faad3f7e-9220-4888-9955-91ab9fc36a55"/>
+				<imageExpression><![CDATA[$P{P_MARCA_AGUA}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="80" uuid="6fd799ab-fd37-4529-b4c1-1bbe66f1559e"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="160" height="80" uuid="96f602dc-fd05-49f3-95df-363dad48667a"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+						<reportElement mode="Transparent" x="1" y="10" width="156" height="59" uuid="1a3def1f-581a-46e3-9a2b-ee89d5366f08"/>
+						<imageExpression><![CDATA[$P{P_LOGO1}]]></imageExpression>
+					</image>
+				</frame>
+				<frame>
+					<reportElement x="455" y="0" width="100" height="80" uuid="155ba323-9099-4d0b-99ff-31bdd2b7a9cd"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+					</box>
+					<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+						<reportElement mode="Transparent" x="13" y="29" width="75" height="23" uuid="3da66741-9530-4036-a715-0e89124fa523"/>
+						<imageExpression><![CDATA[$P{P_LOGO2}]]></imageExpression>
+					</image>
+				</frame>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="161" y="29" width="294" height="50" uuid="50bb83b9-5e57-4f94-a5a8-d9c02c20195f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_DOCUMENTO}.getEncabezado2()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="161" y="4" width="294" height="18" uuid="8e9f2b72-6496-4228-8aa9-a9eb07930790"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_DOCUMENTO}.getEncabezado()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="620" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="30" width="555" height="40" uuid="8f6d8253-5bdd-4106-b927-a989429927a3"/>
+				<textElement markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Double" leftIndent="20" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PARRAFO1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="210" height="20" uuid="fa3a3810-26ba-4dd1-8fc0-1d4c14737020"/>
+				<textElement markup="html">
+					<font size="13" isBold="true"/>
+					<paragraph leftIndent="20" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CERTIFICA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="125" width="555" height="155" uuid="6410212f-d091-42e4-b074-e71ebb11b18b"/>
+				<textElement markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Double" leftIndent="20" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PARRAFO2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="301" width="555" height="40" uuid="9ae57211-faf7-4261-bfbb-110339e55a17"/>
+				<textElement markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Double" leftIndent="20" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PARRAFO_FIRMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="350" width="180" height="30" uuid="8f74f0b2-d42c-4837-ae8f-bd3c5730ee49"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_FIRMA_SECRETARIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="430" width="100" height="20" uuid="51e936d5-e368-4845-9d2b-243457a48edb"/>
+				<textElement textAlignment="Center" markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_VB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="510" width="164" height="20" uuid="8d36fe50-cc9a-4861-a14b-cd0e081a467d"/>
+				<textElement textAlignment="Center" markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_DIRECTOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="537" width="100" height="11" forecolor="#C7C5C5" uuid="829a5214-4c2b-4d4a-813b-d8416e0f1bac"/>
+				<textElement markup="html">
+					<font size="7.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_SELLO_CENTRO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="577" width="164" height="20" uuid="da4a70d8-f6d7-4ad4-a02e-f6cb4fbee05c"/>
+				<textElement textAlignment="Left" markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_FDO_DIRECTOR}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="606" width="100" height="1" uuid="202cc417-1335-48ba-bd7f-df41fb22ad01"/>
+			</break>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="137">
+			<textField>
+				<reportElement x="0" y="10" width="260" height="20" uuid="a886fa8e-f2cf-4019-b638-bef52d5c109b"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_TUTOR_CENTRO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="10" width="260" height="20" uuid="7d0c0306-c726-470e-87fc-ce756c8f01ac"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_TUTOR_EMPRESA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="100" width="259" height="20" uuid="f697e058-f62d-43fd-a3c9-8cecf0e0900f"/>
+				<textElement textAlignment="Left" markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_FDO_TUTOR_CEN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="99" width="260" height="20" uuid="aea51ed9-e0b5-41cd-9d3b-9378c13f1949"/>
+				<textElement textAlignment="Left" markup="html"/>
+				<textFieldExpression><![CDATA[$P{P_FDO_TUTOR_EMP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="120" width="100" height="11" forecolor="#C7C5C5" uuid="da0fa401-9b54-4803-91a1-71f6d03e5f4e"/>
+				<textElement markup="html">
+					<font size="7.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_SELLO_CENTROEDU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="120" width="100" height="11" forecolor="#C7C5C5" uuid="e9e8451f-93f0-4a50-aa95-e2a5bd7e06a0"/>
+				<textElement markup="html">
+					<font size="7.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_SELLO_EMPRESA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="267">
+			<textField>
+				<reportElement x="0" y="10" width="555" height="110" uuid="5ab16f36-7f51-4919-8bea-64920a0133b4"/>
+				<textElement markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Double" firstLineIndent="20" leftIndent="20" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PARRAFO3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="127" width="555" height="39" uuid="5866e17c-6ce2-4542-9fd8-25ec4eb309a1"/>
+				<textElement markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Double" firstLineIndent="20" leftIndent="20" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PARRAFO4}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="177" width="530" height="84" uuid="758c5898-6d8e-4361-98f4-72341dfaacba"/>
+				<dataSourceExpression><![CDATA[$P{P_LISTA_REALIZACIONES}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

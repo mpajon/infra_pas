@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="calendario_temporalizacion" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c3cfd00-3961-4a13-855e-90c5b694d598">
+	<parameter name="P_LOGO1" class="Object" isForPrompting="false"/>
+	<parameter name="P_LOGO2" class="Object" isForPrompting="false"/>
+	<parameter name="P_COLOR_NO_LECTIVO" class="java.lang.String"/>
+	<parameter name="P_COLOR_LECTIVO" class="java.lang.String"/>
+	<parameter name="P_SUBREPORT_CURSO1" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES1" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES2" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES3" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES4" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES5" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES6" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES7" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES9" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES10" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES11" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO1_MES12" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES1" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES2" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES3" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES4" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES5" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES6" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES7" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES9" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES10" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES11" class="java.lang.Object"/>
+	<parameter name="P_SUBREPORT_CURSO2_MES12" class="java.lang.Object"/>
+	<parameter name="P_FECHA_FDO" class="java.lang.String"/>
+	<parameter name="P_CALENDARIO" class="es.princast.gepep.domain.reports.Calendario"/>
+	<parameter name="P_DOCUMENTO" class="es.princast.gepep.domain.Documento" isForPrompting="false"/>
+	<parameter name="P_DISTRIBUCION" class="es.princast.gepep.domain.Distribucion" isForPrompting="false"/>
+	<title>
+		<band height="183" splitType="Stretch">
+			<frame>
+				<reportElement x="10" y="90" width="780" height="90" uuid="dadf4461-7815-46a5-a7d2-1105410f3c6a"/>
+				<textField>
+					<reportElement x="10" y="10" width="760" height="16" uuid="6e1d4109-05e9-4c8c-862f-92cf9b18275e"/>
+					<textFieldExpression><![CDATA["ALUMNO/A:" + $P{P_DISTRIBUCION}.getMatricula().getAlumno().getNombreCompleto()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="29" width="760" height="16" uuid="88dca050-7f69-41d5-9364-7ef23a9af10c"/>
+					<textFieldExpression><![CDATA["EMPRESA:" + $P{P_DISTRIBUCION}.getAnexoContrato().getConvenio().getArea().getEmpresa().getNombre().toUpperCase()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="48" width="288" height="16" uuid="a329ce9b-d8c8-4ceb-b176-a24888d41cd6"/>
+					<textFieldExpression><![CDATA["FECHA  DE INICIO: "+$P{P_DISTRIBUCION}.getDiaIni()+"/"+$P{P_DISTRIBUCION}.getMesIniDistribucion()+"/"+$P{P_DISTRIBUCION}.getAnioIni()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="320" y="48" width="390" height="16" uuid="313270a4-b0d6-4dc2-9d8a-7f230458863a"/>
+					<textFieldExpression><![CDATA["FECHA DE FINALIZACIÓN:"+$P{P_DISTRIBUCION}.getDiaFin()+"/"+$P{P_DISTRIBUCION}.getMesFinDistribucion()+"/"+$P{P_DISTRIBUCION}.getAnioFin()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="68" width="288" height="16" uuid="7fba74fc-c0bf-4702-8000-131348260acd"/>
+					<textFieldExpression><![CDATA["DEL PROYECTO DE FP DUAL"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="49" y="2" width="700" height="80" uuid="41e831b4-62c3-4a34-822c-ac4011f66acf"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="1" y="0" width="151" height="80" uuid="6a6c4594-9679-4475-ad04-1b06424cff67"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+						<reportElement mode="Opaque" x="6" y="8" width="137" height="59" uuid="51415fa8-22f5-443b-81ec-6b3da836ed82"/>
+						<imageExpression><![CDATA[$P{P_LOGO1}]]></imageExpression>
+					</image>
+				</frame>
+				<frame>
+					<reportElement x="599" y="0" width="100" height="80" uuid="c0bb8245-4d8c-4b08-b878-1e95cfeafb56"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+					</box>
+					<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+						<reportElement mode="Opaque" x="13" y="25" width="75" height="23" uuid="6a57189d-7672-44ae-8f20-f95b0666efbd"/>
+						<imageExpression><![CDATA[$P{P_LOGO2}]]></imageExpression>
+					</image>
+				</frame>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="192" y="37" width="350" height="15" uuid="9f6e3f85-0c95-4c4e-8e35-e4a665dfe3d4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font  size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_DOCUMENTO}.getEncabezado2()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="192" y="17" width="350" height="18" uuid="b8e126b8-134e-4804-be7b-fc06f12bc484"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font  isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_DOCUMENTO}.getEncabezado()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="66" splitType="Stretch">
+			<subreport>
+				<reportElement key="" stretchType="RelativeToBandHeight" x="0" y="23" width="802" height="40" isPrintWhenDetailOverflows="true" uuid="18e9c42f-16a2-4658-aba5-27ef59945e2d"/>
+				<subreportParameter name="P_CURSO1">
+					<subreportParameterExpression><![CDATA[$P{P_CALENDARIO}.getCurso1()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES1">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES2">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES3">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES4">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES4}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES5">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES5}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES6">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES7">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES7}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES9">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES9}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES10">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES10}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES11">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES11}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO1_MES12">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO1_MES12}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO1}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="7" width="160" height="16" uuid="bfe850fa-c492-4dd2-ac73-1399f1387602"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Curso: " + $P{P_CALENDARIO}.getCurso1().getCursoAcademico()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="63">
+			<printWhenExpression><![CDATA[$P{P_CALENDARIO}.getCurso2() != null]]></printWhenExpression>
+			<subreport>
+				<reportElement key="" stretchType="RelativeToBandHeight" x="0" y="23" width="802" height="40" isPrintWhenDetailOverflows="true" uuid="b564d99b-27b4-4013-89fd-d41baa84c252"/>
+				<subreportParameter name="P_CURSO2">
+					<subreportParameterExpression><![CDATA[$P{P_CALENDARIO}.getCurso2()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_COLOR_NO_LECTIVO">
+					<subreportParameterExpression><![CDATA[$P{P_COLOR_NO_LECTIVO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES1">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES2">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES3">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES4">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES4}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES5">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES5}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES6">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES7">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES7}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES9">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES9}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES10">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES10}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES11">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES11}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_SUBREPORT_CURSO2_MES12">
+					<subreportParameterExpression><![CDATA[$P{P_SUBREPORT_CURSO2_MES12}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT_CURSO2}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="7" width="160" height="16" uuid="638a3417-39fb-4432-a2fe-bbf14c714b7b"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Curso: " + $P{P_CALENDARIO}.getCurso2().getCursoAcademico()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="155">
+			<textField>
+				<reportElement x="510" y="10" width="289" height="13" uuid="f4715f95-a678-4ffa-984d-bcc11ebd8b68"/>
+				<textFieldExpression><![CDATA[$P{P_FECHA_FDO}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="49" width="802" height="101" uuid="0ef84b79-e08d-4d59-b55e-64660a7d1c19"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="200" height="101" uuid="b422e7d7-7541-4213-9899-6f34afc57ca6">
+						<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaTutor() == true]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="200" height="24" uuid="b6a5272d-0908-4b6b-87e3-862b0b6b8300"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="9"/>
+						</textElement>
+						<text><![CDATA[TUTOR/A CENTRO DOCENTE]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="1" y="85" width="199" height="15" uuid="56e6d52e-9e0f-419c-a3be-0a749e4225ba"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left">
+							<font  size="8"/>
+							<paragraph leftIndent="2"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getNombre().toUpperCase() + " " + $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido1().toUpperCase() + " " + $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido2().toUpperCase()]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="200" y="0" width="201" height="101" uuid="b23f12e6-c56e-499d-811e-82998e93d6d1">
+						<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaEmpresa() == true]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="200" height="24" uuid="ab1da43e-da78-4432-a73c-4bbef6d3879a"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="9"/>
+						</textElement>
+						<text><![CDATA[TUTOR/A DE LA EMPRESA O INSTITUCIÓN]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="0" y="85" width="201" height="15" uuid="8f4140a3-43fc-40e5-83c0-cd9818f03d7b"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left">
+							<font  size="8"/>
+							<paragraph leftIndent="2"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + $P{P_DISTRIBUCION}.getTutorEmpresa().toUpperCase()]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="401" y="0" width="201" height="101" uuid="2fccfa59-9b42-4b52-ae37-e51040e647ce"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="200" height="24" uuid="34abc8bd-2584-454f-ae5a-11dfc149ed46"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="9"/>
+						</textElement>
+						<text><![CDATA[FIRMA DEL ALUMNO/A O TUTOR/A LEGAL]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="1" y="85" width="199" height="15" uuid="3213ed54-c8f8-4128-be8c-a95036997447"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left">
+							<font  size="8"/>
+							<paragraph leftIndent="2"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + $P{P_DISTRIBUCION}.getMatricula().getAlumno().getNombreCompleto()]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="602" y="0" width="200" height="101" uuid="070029b1-cc2c-4898-9674-922c85cf0144">
+						<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaCentro() == true]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="200" height="24" uuid="e88f51e3-0cf9-4f3e-b862-ae830683c207"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="9"/>
+						</textElement>
+						<text><![CDATA[VºBº
+DIRECTOR/A CENTRO DOCENTE]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="0" y="85" width="200" height="14" uuid="8c7cece7-9615-4ce4-acee-43235e670435"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left">
+							<font  size="8"/>
+							<paragraph leftIndent="2"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + $P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getCentro().getDirector()]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexos" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="36017548-caa6-4343-83b3-b5e6d4e75bea">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<subDataset name="Dataset1" uuid="ead4f81d-92ba-4ca6-b80f-9a78b22895e1">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<queryString language="SQL">
+			<![CDATA[select c.te_texto as texto
+from clausula c inner join clausula_documento cd on c.cn_clausula = cd.cn_clausula
+where cd.cn_documento = 1]]>
+		</queryString>
+		<field name="texto" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="texto"/>
+		</field>
+		<group name="texto">
+			<groupExpression><![CDATA[$F{texto}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="P_CABECERA_CLAUSULAS" class="java.lang.String"/>
+	<parameter name="P_CATEG_TIPO_PRACT" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select c.te_texto as texto
+from clausula c inner join clausula_documento cd on c.cn_clausula = cd.cn_clausula
+where cd.cn_documento = 1]]>
+	</queryString>
+	<field name="texto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="4" y="1" width="526" height="15" isRemoveLineWhenBlank="true" uuid="0e4b80c8-e5e0-41ed-a99a-b76684a5f8b8"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacingSize="0.0" tabStopWidth="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CATEG_TIPO_PRACT}.equals( "ARTISTICA DE ARTES Y DISEÑO") ?  "CLÁUSULAS del Anexo I " : "CLÁUSULAS del Anexo II"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="4" y="17" width="526" height="37" isRemoveLineWhenBlank="true" uuid="62849119-c913-4bfa-a179-f155df85b0e7"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CABECERA_CLAUSULAS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="4" y="1" width="520" height="10" uuid="49287513-ec37-41e9-bc30-9839c6958c95"/>
+				<textElement textAlignment="Justified">
+					<font size="6"/>
+					<paragraph lineSpacing="AtLeast" lineSpacingSize="0.0" tabStopWidth="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{texto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

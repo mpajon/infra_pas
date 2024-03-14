@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificado_estudios_realizaciones_subreport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="872ad082-7a83-41f9-af3c-e5456ce435b7">
+	<field name="realizaciones" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="0" width="460" height="20" uuid="e00fead6-9e6b-4c0d-870b-d3f241b6e0f9"/>
+				<textFieldExpression><![CDATA[$F{realizaciones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="1" width="12" height="16" uuid="c5ece824-9fdc-4bf3-8621-7a591abdac27"/>
+				<textFieldExpression><![CDATA["\u2022"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

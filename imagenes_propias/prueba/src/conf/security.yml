@@ -1,0 +1,13 @@
+keycloak:
+  realm: Educacion
+  auth-server-url: https://desarhssosa.asturias.es:8443/auth/
+  resource: gepep
+  public-client: false
+  use-resource-role-mappings: false
+  securityConstraints:
+    - authRoles:
+        - '**'
+      securityCollections:
+        - name: Autenticacion exigida para todos los endpoints
+          patterns:
+            - /api/*

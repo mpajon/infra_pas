@@ -1,0 +1,2200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Genericos" targetNamespace="http://princast.es/genericos/1.0/genericos.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://princast.es/genericos/1.0/genericos.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://princast.es/genericos/1.0/genericos.xsd">
+
+
+	
+	  <wsdl:types>
+
+
+    	    <xsd:schema targetNamespace="http://princast.es/genericos/1.0/genericos.wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+			      <xsd:import namespace="http://princast.es/genericos/1.0/genericos.xsd" schemaLocation="http://uddipre.asturias.es/EsquemasPA/wsGenericos/1.0/genericos.xsd"/>
+
+			   <!-- <xsd:import namespace="http://princast.es/genericos/1.0/genericos.xsd" schemaLocation="genericos.xsd"/> -->
+
+	
+    	    </xsd:schema>
+
+
+  	  </wsdl:types>
+
+
+  	
+  	  <wsdl:message name="BuscaPaisPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaPaisPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaPaisRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaPaisRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaNacionalidadPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaNacionalidadPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaNacionalidadRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaNacionalidadRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaProvinciaPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaProvinciaPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaProvinciaRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaProvinciaRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaMunicipioPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaMunicipioPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaMunicipioRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaMunicipioRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaParroquiaPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaParroquiaPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaParroquiaRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaParroquiaRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaLocalidadPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaLocalidadPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaLocalidadRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaLocalidadRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaAutonomiaPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaAutonomiaPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaAutonomiaRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaAutonomiaRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaBancoPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaBancoPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaBancoRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaBancoRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaSucursalPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaSucursalPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaSucursalRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaSucursalRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaViaPublicaPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaViaPublicaPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaViaPublicaRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaViaPublicaRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="CuentaFestivosPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TCuentaFestivosPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="CuentaFestivosRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TCuentaFestivosRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaTipoAgrupacionPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaTipoAgrupacionPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaTipoAgrupacionRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaTipoAgrupacionRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaAgrupacionPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaAgrupacionPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaAgrupacionRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaAgrupacionRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaPaisesPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaPaisesPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaPaisesRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaPaisesRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+
+  	  <wsdl:message name="BuscaListaProvinciasPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaProvinciasPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaProvinciasRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaProvinciasRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaMunicipiosPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaMunicipiosPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaMunicipiosRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaMunicipiosRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaParroquiasPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaParroquiasPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaParroquiasRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaParroquiasRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaLocalidadesPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaLocalidadesPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaLocalidadesRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaLocalidadesRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaLocMuniPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaLocMuniPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaLocMuniRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaLocMuniRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaLocMuniOrderLocalPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaLocMuniPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaLocMuniOrderLocalRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaLocMuniRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaAutonomiasPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaAutonomiasPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaAutonomiasRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaAutonomiasRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaProvAutPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaProvAutPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaProvAutRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaProvAutRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaBancosPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaBancosPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaBancosRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaBancosRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaSucursalesPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaSucursalesPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaSucursalesRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaSucursalesRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaViasPublicasPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaViasPublicasPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaViasPublicasRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaViasPublicasRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaTiposAgrupacionPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaTiposAgrupacionPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaTiposAgrupacionRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaTiposAgrupacionRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaAgrupacionesPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaAgrupacionesPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaAgrupacionesRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaAgrupacionesRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaListaAgrupacionesCnPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaAgrupacionesCnPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaListaAgrupacionesCnRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaListaAgrupacionesCnRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaNumeroLaborablesPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaNumeroLaborablesPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaNumeroLaborablesRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaNumeroLaborablesRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaAgrupacionIncluidaPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaAgrupacionIncluidaPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaAgrupacionIncluidaRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaAgrupacionIncluidaRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaFestPaisPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestPaisPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaFestPaisRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestPaisRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaFestProvinciaPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestProvinciaPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaFestProvinciaRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestProvinciaRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaFestMunicipioPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestMunicipioPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaFestMunicipioRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestMunicipioRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaFestLocalidadPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestLocalidadPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaFestLocalidadRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaFestLocalidadRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="CompruebaFestivoPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TCompruebaFestivoPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="CompruebaFestivoRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TCompruebaFestivoRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  	
+  	  <wsdl:message name="BuscaLocMunicipioPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaLocMunicipioPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaLocMunicipioRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaLocMunicipioRespuesta"/>
+
+
+  	  </wsdl:message>
+
+  	 
+  	  <wsdl:message name="BuscaLocDescPeticionMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaLocDescPeticion"/>
+
+
+  	  </wsdl:message>
+
+
+  	  <wsdl:message name="BuscaLocDescRespuestaMensaje">
+
+
+    	    <wsdl:part name="body" type="xsd1:TBuscaLocDescRespuesta"/>
+
+
+  	  </wsdl:message>
+
+
+  		  	
+ 	  <wsdl:portType name="GenericosPortType">
+
+
+    	    <wsdl:operation name="BuscaPais">
+
+
+      		      <wsdl:input message="tns:BuscaPaisPeticionMensaje" name="BuscaPaisEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaPaisRespuestaMensaje" name="BuscaPaisSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaNacionalidad">
+
+
+      		      <wsdl:input message="tns:BuscaNacionalidadPeticionMensaje" name="BuscaNacionalidadEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaNacionalidadRespuestaMensaje" name="BuscaNacionalidadSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaProvincia">
+
+
+      		      <wsdl:input message="tns:BuscaProvinciaPeticionMensaje" name="BuscaProvinciaEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaProvinciaRespuestaMensaje" name="BuscaProvinciaSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaMunicipio">
+
+
+      		      <wsdl:input message="tns:BuscaMunicipioPeticionMensaje" name="BuscaMunicipioEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaMunicipioRespuestaMensaje" name="BuscaMunicipioSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaParroquia">
+
+
+      		      <wsdl:input message="tns:BuscaParroquiaPeticionMensaje" name="BuscaParroquiaEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaParroquiaRespuestaMensaje" name="BuscaParroquiaSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaLocalidad">
+
+
+      		      <wsdl:input message="tns:BuscaLocalidadPeticionMensaje" name="BuscaLocalidadEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaLocalidadRespuestaMensaje" name="BuscaLocalidadSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaAutonomia">
+
+
+      		      <wsdl:input message="tns:BuscaAutonomiaPeticionMensaje" name="BuscaAutonomiaEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaAutonomiaRespuestaMensaje" name="BuscaAutonomiaSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaBanco">
+
+
+      		      <wsdl:input message="tns:BuscaBancoPeticionMensaje" name="BuscaBancoEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaBancoRespuestaMensaje" name="BuscaBancoSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaSucursal">
+
+
+      		      <wsdl:input message="tns:BuscaSucursalPeticionMensaje" name="BuscaSucursalEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaSucursalRespuestaMensaje" name="BuscaSucursalSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaViaPublica">
+
+
+      		      <wsdl:input message="tns:BuscaViaPublicaPeticionMensaje" name="BuscaViaPublicaEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaViaPublicaRespuestaMensaje" name="BuscaViaPublicaSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="CuentaFestivos">
+
+
+      		      <wsdl:input message="tns:CuentaFestivosPeticionMensaje" name="CuentaFestivosEntrada"/>
+
+
+      		      <wsdl:output message="tns:CuentaFestivosRespuestaMensaje" name="CuentaFestivosSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaTipoAgrupacion">
+
+
+      		      <wsdl:input message="tns:BuscaTipoAgrupacionPeticionMensaje" name="BuscaTipoAgrupacionEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaTipoAgrupacionRespuestaMensaje" name="BuscaTipoAgrupacionSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaAgrupacion">
+
+
+      		      <wsdl:input message="tns:BuscaAgrupacionPeticionMensaje" name="BuscaAgrupacionEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaAgrupacionRespuestaMensaje" name="BuscaAgrupacionSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaPaises">
+
+
+      		      <wsdl:input message="tns:BuscaListaPaisesPeticionMensaje" name="BuscaListaPaisesEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaPaisesRespuestaMensaje" name="BuscaListaPaisesSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaProvincias">
+
+
+      		      <wsdl:input message="tns:BuscaListaProvinciasPeticionMensaje" name="BuscaListaProvinciasEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaProvinciasRespuestaMensaje" name="BuscaListaProvinciasSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaMunicipios">
+
+
+      		      <wsdl:input message="tns:BuscaListaMunicipiosPeticionMensaje" name="BuscaListaMunicipiosEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaMunicipiosRespuestaMensaje" name="BuscaListaMunicipiosSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaParroquias">
+
+
+      		      <wsdl:input message="tns:BuscaListaParroquiasPeticionMensaje" name="BuscaListaParroquiasEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaParroquiasRespuestaMensaje" name="BuscaListaParroquiasSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaLocalidades">
+
+
+      		      <wsdl:input message="tns:BuscaListaLocalidadesPeticionMensaje" name="BuscaListaLocalidadesEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaLocalidadesRespuestaMensaje" name="BuscaListaLocalidadesSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaLocMuni">
+
+
+      		      <wsdl:input message="tns:BuscaListaLocMuniPeticionMensaje" name="BuscaListaLocMuniEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaLocMuniRespuestaMensaje" name="BuscaListaLocMuniSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaLocMuniOrderLocal">
+
+
+      		      <wsdl:input message="tns:BuscaListaLocMuniOrderLocalPeticionMensaje" name="BuscaListaLocMuniOrderLocalEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaLocMuniOrderLocalRespuestaMensaje" name="BuscaListaLocMuniOrderLocalSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaAutonomias">
+
+
+      		      <wsdl:input message="tns:BuscaListaAutonomiasPeticionMensaje" name="BuscaListaAutonomiasEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaAutonomiasRespuestaMensaje" name="BuscaListaAutonomiasSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaProvAut">
+
+
+      		      <wsdl:input message="tns:BuscaListaProvAutPeticionMensaje" name="BuscaListaProvAutEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaProvAutRespuestaMensaje" name="BuscaListaProvAutSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaBancos">
+
+
+      		      <wsdl:input message="tns:BuscaListaBancosPeticionMensaje" name="BuscaListaBancosEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaBancosRespuestaMensaje" name="BuscaListaBancosSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaSucursales">
+
+
+      		      <wsdl:input message="tns:BuscaListaSucursalesPeticionMensaje" name="BuscaListaSucursalesEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaSucursalesRespuestaMensaje" name="BuscaListaSucursalesSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaViasPublicas">
+
+
+      		      <wsdl:input message="tns:BuscaListaViasPublicasPeticionMensaje" name="BuscaListaViasPublicasEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaViasPublicasRespuestaMensaje" name="BuscaListaViasPublicasSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaTiposAgrupacion">
+
+
+      		      <wsdl:input message="tns:BuscaListaTiposAgrupacionPeticionMensaje" name="BuscaListaTiposAgrupacionEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaTiposAgrupacionRespuestaMensaje" name="BuscaListaTiposAgrupacionSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaAgrupaciones">
+
+
+      		      <wsdl:input message="tns:BuscaListaAgrupacionesPeticionMensaje" name="BuscaListaAgrupacionesEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaAgrupacionesRespuestaMensaje" name="BuscaListaAgrupacionesSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaListaAgrupacionesCn">
+
+
+      		      <wsdl:input message="tns:BuscaListaAgrupacionesCnPeticionMensaje" name="BuscaListaAgrupacionesCnEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaListaAgrupacionesCnRespuestaMensaje" name="BuscaListaAgrupacionesCnSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaNumeroLaborables">
+
+
+      		      <wsdl:input message="tns:BuscaNumeroLaborablesPeticionMensaje" name="BuscaNumeroLaborablesEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaNumeroLaborablesRespuestaMensaje" name="BuscaNumeroLaborablesSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaAgrupacionIncluida">
+
+
+      		      <wsdl:input message="tns:BuscaAgrupacionIncluidaPeticionMensaje" name="BuscaAgrupacionIncluidaEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaAgrupacionIncluidaRespuestaMensaje" name="BuscaAgrupacionIncluidaSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaFestPais">
+
+
+      		      <wsdl:input message="tns:BuscaFestPaisPeticionMensaje" name="BuscaFestPaisEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaFestPaisRespuestaMensaje" name="BuscaFestPaisSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaFestProvincia">
+
+
+      		      <wsdl:input message="tns:BuscaFestProvinciaPeticionMensaje" name="BuscaFestProvinciaEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaFestProvinciaRespuestaMensaje" name="BuscaFestProvinciaSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaFestMunicipio">
+
+
+      		      <wsdl:input message="tns:BuscaFestMunicipioPeticionMensaje" name="BuscaFestMunicipioEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaFestMunicipioRespuestaMensaje" name="BuscaFestMunicipioSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="BuscaFestLocalidad">
+
+
+      		      <wsdl:input message="tns:BuscaFestLocalidadPeticionMensaje" name="BuscaFestLocalidadEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaFestLocalidadRespuestaMensaje" name="BuscaFestLocalidadSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+    	    <wsdl:operation name="CompruebaFestivo">
+
+
+      		      <wsdl:input message="tns:CompruebaFestivoPeticionMensaje" name="CompruebaFestivoEntrada"/>
+
+
+      		      <wsdl:output message="tns:CompruebaFestivoRespuestaMensaje" name="CompruebaFestivoSalida"/>
+
+
+    	    </wsdl:operation>
+
+    	  
+    	    <wsdl:operation name="BuscaLocDesc">
+
+
+      		      <wsdl:input message="tns:BuscaLocDescPeticionMensaje" name="BuscaLocDescEntrada"/>
+
+
+      		      <wsdl:output message="tns:BuscaLocDescRespuestaMensaje" name="BuscaLocDescSalida"/>
+
+
+    	    </wsdl:operation>
+
+
+  	  </wsdl:portType>
+
+
+  	
+  	  <wsdl:binding name="GenericosBinding" type="tns:GenericosPortType">
+
+
+    	    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+
+    		
+    		    <wsdl:operation name="BuscaPais">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaPais"/>
+
+
+      			      <wsdl:input name="BuscaPaisEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaPaisSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaNacionalidad">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaNacionalidad"/>
+
+
+      			      <wsdl:input name="BuscaNacionalidadEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaNacionalidadSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaProvincia">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaProvincia"/>
+
+
+      			      <wsdl:input name="BuscaProvinciaEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaProvinciaSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaMunicipio">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaMunicipio"/>
+
+
+      			      <wsdl:input name="BuscaMunicipioEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaMunicipioSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaParroquia">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaParroquia"/>
+
+
+      			      <wsdl:input name="BuscaParroquiaEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaParroquiaSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaLocalidad">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaLocalidad"/>
+
+
+      			      <wsdl:input name="BuscaLocalidadEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaLocalidadSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaAutonomia">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaAutonomia"/>
+
+
+      			      <wsdl:input name="BuscaAutonomiaEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaAutonomiaSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaBanco">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaBanco"/>
+
+
+      			      <wsdl:input name="BuscaBancoEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaBancoSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaSucursal">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaSucursal"/>
+
+
+      			      <wsdl:input name="BuscaSucursalEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaSucursalSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaViaPublica">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaViaPublica"/>
+
+
+      			      <wsdl:input name="BuscaViaPublicaEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaViaPublicaSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="CuentaFestivos">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/CuentaFestivos"/>
+
+
+      			      <wsdl:input name="CuentaFestivosEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="CuentaFestivosSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaTipoAgrupacion">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaTipoAgrupacion"/>
+
+
+      			      <wsdl:input name="BuscaTipoAgrupacionEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaTipoAgrupacionSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaAgrupacion">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaAgrupacion"/>
+
+
+      			      <wsdl:input name="BuscaAgrupacionEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaAgrupacionSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaPaises">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaPaises"/>
+
+
+      			      <wsdl:input name="BuscaListaPaisesEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaPaisesSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaProvincias">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaProvincias"/>
+
+
+      			      <wsdl:input name="BuscaListaProvinciasEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaProvinciasSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaMunicipios">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaMunicipios"/>
+
+
+      			      <wsdl:input name="BuscaListaMunicipiosEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaMunicipiosSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaParroquias">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaParroquias"/>
+
+
+      			      <wsdl:input name="BuscaListaParroquiasEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaParroquiasSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaLocalidades">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaLocalidades"/>
+
+
+      			      <wsdl:input name="BuscaListaLocalidadesEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaLocalidadesSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaLocMuni">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaLocMuni"/>
+
+
+      			      <wsdl:input name="BuscaListaLocMuniEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaLocMuniSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaLocMuniOrderLocal">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaLocMuniOrderLocal"/>
+
+
+      			      <wsdl:input name="BuscaListaLocMuniOrderLocalEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaLocMuniOrderLocalSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaAutonomias">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaAutonomias"/>
+
+
+      			      <wsdl:input name="BuscaListaAutonomiasEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaAutonomiasSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaProvAut">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaProvAut"/>
+
+
+      			      <wsdl:input name="BuscaListaProvAutEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaProvAutSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaBancos">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaBancos"/>
+
+
+      			      <wsdl:input name="BuscaListaBancosEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaBancosSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaSucursales">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaSucursales"/>
+
+
+      			      <wsdl:input name="BuscaListaSucursalesEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaSucursalesSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaViasPublicas">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaViasPublicas"/>
+
+
+      			      <wsdl:input name="BuscaListaViasPublicasEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaViasPublicasSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaTiposAgrupacion">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaTiposAgrupacion"/>
+
+
+      			      <wsdl:input name="BuscaListaTiposAgrupacionEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaTiposAgrupacionSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaAgrupaciones">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaAgrupaciones"/>
+
+
+      			      <wsdl:input name="BuscaListaAgrupacionesEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaAgrupacionesSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaListaAgrupacionesCn">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaListaAgrupacionesCn"/>
+
+
+      			      <wsdl:input name="BuscaListaAgrupacionesCnEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaListaAgrupacionesCnSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaNumeroLaborables">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaNumeroLaborables"/>
+
+
+      			      <wsdl:input name="BuscaNumeroLaborablesEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaNumeroLaborablesSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaAgrupacionIncluida">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaAgrupacionIncluida"/>
+
+
+      			      <wsdl:input name="BuscaAgrupacionIncluidaEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaAgrupacionIncluidaSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaFestPais">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaFestPais"/>
+
+
+      			      <wsdl:input name="BuscaFestPaisEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaFestPaisSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaFestProvincia">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaFestProvincia"/>
+
+
+      			      <wsdl:input name="BuscaFestProvinciaEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaFestProvinciaSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaFestMunicipio">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaFestMunicipio"/>
+
+
+      			      <wsdl:input name="BuscaFestMunicipioEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaFestMunicipioSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="BuscaFestLocalidad">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaFestLocalidad"/>
+
+
+      			      <wsdl:input name="BuscaFestLocalidadEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaFestLocalidadSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+
+    		
+    		    <wsdl:operation name="CompruebaFestivo">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/CompruebaFestivo"/>
+
+
+      			      <wsdl:input name="CompruebaFestivoEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="CompruebaFestivoSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+    		    </wsdl:operation>
+
+    		  
+    		    <wsdl:operation name="BuscaLocDesc">
+
+
+      			      <soap:operation soapAction="http://www.princast.es/genericos/1.0/genericos.wsdl/BuscaLocDesc"/>
+
+
+      			      <wsdl:input name="BuscaLocDescEntrada">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:input>
+
+
+      			      <wsdl:output name="BuscaLocDescSalida">
+
+
+        			        <soap:body namespace="http://www.princast.es/genericos/1.0/genericos.wsdl" use="literal"/>
+
+
+      			      </wsdl:output>
+
+
+
+    		    </wsdl:operation>
+
+
+    		
+  	  </wsdl:binding>
+
+
+  	
+  	  <wsdl:service name="GenericosServicio">
+
+
+    	    <wsdl:port binding="tns:GenericosBinding" name="GenericosPort">
+
+
+      		      <soap:address location="http://integ40ws.princast.org/wsGenericos/services/GenericosPort"/>
+
+
+    	    </wsdl:port>
+
+
+  	  </wsdl:service>
+
+
+  	
+</wsdl:definitions>

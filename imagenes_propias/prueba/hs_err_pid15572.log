@@ -1,0 +1,185 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x00007fffc2c2cef9, pid=15572, tid=17364
+#
+# JRE version:  (11.0.2+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.2+9, mixed mode, aot, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [vcruntime140.dll+0xcef9]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\lib\idea_rt.jar=56933:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\bin -Dfile.encoding=UTF-8 es.princast.gepep.GepepApplicationApp
+
+Host: Intel(R) Core(TM) i7-7600U CPU @ 2.80GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 14393 (10.0.14393.2906)
+Time: Wed Mar 16 10:26:12 2022 Romance Standard Time elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+Stack: [0x000000b6e8b00000,0x000000b6e8c00000],  sp=0x000000b6e8bff178,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [vcruntime140.dll+0xcef9]
+V  [jvm.dll+0x65eeb0]
+V  [jvm.dll+0x65dda7]
+V  [jvm.dll+0x65d79e]
+V  [jvm.dll+0x372742]
+V  [jvm.dll+0x731a06]
+V  [jvm.dll+0x3e1bad]
+V  [jvm.dll+0x3e3e81]
+C  [java.exe+0x3607]
+C  [java.exe+0x1746c]
+C  [KERNEL32.DLL+0x84d4]
+C  [ntdll.dll+0x6e851]
+
+
+siginfo: EXCEPTION_IN_PAGE_ERROR (0xc0000006), writing address 0x0000024f41c30000
+
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000024f41c30000, RCX=0x0000000000010000, RDX=0x0000024f403455d0
+RSP=0x000000b6e8bff178, RBP=0x0000024f40351670, RSI=0x0000024f40331810, RDI=0x0000024f41c30000
+R8 =0x0000000000010000, R9 =0x0000000000000000, R10=0x0000000000000000, R11=0x0000024f41c30000
+R12=0x0000000000000000, R13=0x00007fff7401f5d0, R14=0x0000000000010000, R15=0x0000000000003cd4
+RIP=0x00007fffc2c2cef9, EFLAGS=0x0000000000010203
+
+Top of Stack: (sp=0x000000b6e8bff178)
+0x000000b6e8bff178:   00007fff7409eeb0 0000024f4250db50
+0x000000b6e8bff188:   0000024f00000000 0000024f42527454
+0x000000b6e8bff198:   0000024f403455d0 0000000000010000
+0x000000b6e8bff1a8:   000000b6e8bff1c4 000000b6e8bff440
+0x000000b6e8bff1b8:   0000024f00000104 03e700ff00000101
+0x000000b6e8bff1c8:   0000024f000000ff 0000000000000000
+0x000000b6e8bff1d8:   00007fffce142346 0000000000002000
+0x000000b6e8bff1e8:   0000024f40300000 0000024f42525440
+0x000000b6e8bff1f8:   00007fffce13497e 0000000000002000
+0x000000b6e8bff208:   000000000000000d 000000000001e548
+0x000000b6e8bff218:   0000024f424e0000 0000024f005c3a43
+0x000000b6e8bff228:   0000000000000009 0000000000000040
+0x000000b6e8bff238:   b6ba15ac53836bd4 82852b17e31b93b6
+0x000000b6e8bff248:   0000024f402c0000 0000000000000000
+0x000000b6e8bff258:   0000024f402c0000 0000024f42525440
+0x000000b6e8bff268:   0000000000000090 0000024f402c02c4 
+
+Instructions: (pc=0x00007fffc2c2cef9)
+0x00007fffc2c2ced9:   f8 80 00 00 00 77 30 0f ba 25 38 53 00 00 02 0f
+0x00007fffc2c2cee9:   83 82 00 00 00 8b c2 48 8b d7 48 8b f9 49 8b c8
+0x00007fffc2c2cef9:   f3 aa 48 8b fa 49 8b c3 c3 66 66 66 66 66 66 0f
+0x00007fffc2c2cf09:   1f 84 00 00 00 00 00 0f ba 25 08 53 00 00 01 72 
+
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+
+[error occurred during error reporting (printing compressed oops mode), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff7418c2b7]
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff658f80000 - 0x00007ff658fc5000 	C:\desarrollo\java\install\jdk-11.0.2\bin\java.exe
+0x00007fffce110000 - 0x00007fffce2e0000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007fffcc1d0000 - 0x00007fffcc27b000 	C:\windows\System32\KERNEL32.DLL
+0x00007fffca870000 - 0x00007fffcaa8d000 	C:\windows\System32\KERNELBASE.dll
+0x00007fffcc060000 - 0x00007fffcc1c5000 	C:\windows\System32\USER32.dll
+0x00007fffca600000 - 0x00007fffca61e000 	C:\windows\System32\win32u.dll
+0x00007fffcde70000 - 0x00007fffcdea4000 	C:\windows\System32\GDI32.dll
+0x00007fffcb510000 - 0x00007fffcb691000 	C:\windows\System32\gdi32full.dll
+0x00007fffbef40000 - 0x00007fffbf1ba000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.2848_none_7ddecd5e83436d8c\COMCTL32.dll
+0x00007fffcc2f0000 - 0x00007fffcc38e000 	C:\windows\System32\msvcrt.dll
+0x00007fffcbd90000 - 0x00007fffcc055000 	C:\windows\System32\combase.dll
+0x00007fffcaa90000 - 0x00007fffcab84000 	C:\windows\System32\ucrtbase.dll
+0x00007fffcb6c0000 - 0x00007fffcb7e1000 	C:\windows\System32\RPCRT4.dll
+0x00007fffcad60000 - 0x00007fffcadca000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007fffcba90000 - 0x00007fffcbabe000 	C:\windows\System32\IMM32.DLL
+0x00007fffc2c20000 - 0x00007fffc2c36000 	C:\desarrollo\java\install\jdk-11.0.2\bin\vcruntime140.dll
+0x00007fffb6a90000 - 0x00007fffb6b3a000 	C:\desarrollo\java\install\jdk-11.0.2\bin\msvcp140.dll
+0x00007fff73a40000 - 0x00007fff74563000 	C:\desarrollo\java\install\jdk-11.0.2\bin\server\jvm.dll
+0x00007fffcddc0000 - 0x00007fffcde62000 	C:\windows\System32\ADVAPI32.dll
+0x00007fffcc850000 - 0x00007fffcc8a9000 	C:\windows\System32\sechost.dll
+0x00007fffcc390000 - 0x00007fffcc398000 	C:\windows\System32\PSAPI.DLL
+0x00007fffc8900000 - 0x00007fffc8923000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007fffc1c40000 - 0x00007fffc1c4a000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007fffbe970000 - 0x00007fffbe979000 	C:\windows\SYSTEM32\WSOCK32.dll
+0x00007fffcc280000 - 0x00007fffcc2ea000 	C:\windows\System32\WS2_32.dll
+0x00007fffc88a0000 - 0x00007fffc88cb000 	C:\windows\SYSTEM32\WINMMBASE.dll
+0x00007fffca820000 - 0x00007fffca862000 	C:\windows\System32\cfgmgr32.dll
+0x00007fffca5d0000 - 0x00007fffca5df000 	C:\windows\System32\kernel.appcore.dll
+0x00007fffbd5f0000 - 0x00007fffbd601000 	C:\desarrollo\java\install\jdk-11.0.2\bin\verify.dll
+0x00007fffc6f60000 - 0x00007fffc70f2000 	C:\windows\SYSTEM32\DBGHELP.DLL
+0x00007fffbd990000 - 0x00007fffbd9b9000 	C:\windows\SYSTEM32\dbgcore.DLL
+0x00007fffb6a60000 - 0x00007fffb6a88000 	C:\desarrollo\java\install\jdk-11.0.2\bin\java.dll
+0x00007fffb06c0000 - 0x00007fffb06ef000 	C:\desarrollo\java\install\jdk-11.0.2\bin\instrument.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\desarrollo\java\install\jdk-11.0.2\bin;C:\windows\SYSTEM32;C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.2848_none_7ddecd5e83436d8c;C:\desarrollo\java\install\jdk-11.0.2\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\lib\idea_rt.jar=56933:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\bin -Dfile.encoding=UTF-8 
+java_command: es.princast.gepep.GepepApplicationApp
+java_class_path (initial): C:\desarrollo\java\proyectos\mntpa_edu_gepep_back\target\classes;C:\Users\ruth.delafuente\.m2\repository\es\princast\mntpa-back\0.0.4\mntpa-back-0.0.4.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.1.1.RELEASE\spring-boot-starter-web-2.1.1.RELEASE.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.1.1.RELEASE\spring-boot-starter-json-2.1.1.RELEASE.jar;C:\Users\ruth.delafuente\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.7\jackson-datatype-jdk8-2.9.7.jar;C:\Users\ruth.delafuente\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.7\jackson-datatype-jsr310-2.9.7.jar;C:\Users\ruth.delafuente\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.7\jackson-module-parameter-names-2.9.7.jar;C:\Users\ruth.delafuente\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.13.Final\hibernate-validator-6.0.13.Final.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\spring-web\5.1.3.RELEASE\spring-web-5.1.3.RELEASE.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\2.1.1.RELEASE\spring-boot-starter-actuator-2.1.1.RELEASE.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\2.1.1.RELEASE\spring-boot-actuator-autoconfigure-2.1.1.RELEASE.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\boot\spring-boot-actuator\2.1.1.RELEASE\spring-boot-actuator-2.1.1.RELEASE.jar;C:\Users\ruth.delafuente\.m2\repository\io\micrometer\micrometer-core\1.1.1\micrometer-core-1.1.1.jar;C:\Users\ruth.delafuente\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.9\HdrHistogram-2.1.9.jar;C:\Users\ruth.delafuente\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\ruth.delafuente\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.1.1.RE
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266503808                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 4264060928                                {product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\desarrollo\java\install\jdk-11.0.2
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\System32;C:\oracle\product\11.2.0\client_1\bin;C:\orant\bin;C:\oracle\ora11g\product\11.2.0\client_1\bin;C:\app\m.teresa.sopena\product\11.2.0\client_2;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows;C:\windows\System32;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\orant\jdk\bin;C:\desarrollo\java\install\apache-maven-3.3.9\bin;C:\desarrollo\java\install\jdk-11.0.2\bin;C:\desarrollo\java\install\apache-ant-1.7.1\bin;C:\HashiCorp\Vagrant\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\desarrollo\java\install\apache-maven-3.3.9\bin;C:\Program Files (x86)\Sennheiser\SenncomSDK\;C:\Program Files\PuTTY\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\desarrollo\java\install\apache-maven-3.3.9\bin;C:\Program Files\Microsoft VS Code\bin;C:\Windows\SysWow64\;C:\Users\ruth.delafuente\AppData\Local\GitHubDesktop\bin;C:\Users\ruth.delafuente\AppData\Roaming\npm;C:\Users\ruth.delafuente\AppData\Local\Yarn\bin;C:\desarrollo\java\install\jdk-11.0.2\bin
+USERNAME=Ruth.Delafuente
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 14393 (10.0.14393.2906)
+
+CPU:total 4 (initial active 4) 
+
+Memory: 4k page, system-wide physical 16266M (7289M free)
+TotalPageFile size 32650M (AvailPageFile size 21274M)
+current process WorkingSet (physical memory assigned to process): 8M, peak: 8M
+current process commit charge ("private bytes"): 3M, peak: 3M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.2+9) for windows-amd64 JRE (11.0.2+9), built on Jan 18 2019 05:23:22 by "mach5one" with MS VC++ 15.5 (VS2017)
+
+END.

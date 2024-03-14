@@ -1,0 +1,26 @@
+application:
+    plaintsis:
+            username: UsuGepep
+            password: ZZZCONFZZZGEPEPBRZZZBUSINTZZZUSUGEPEPZZZPROZZZ
+            sincrosauce:
+                registros: 500
+                permiteAnio: true
+            ldap: ldaps://ldapeduca.princast.org
+            instructionSchedularTime: 0 5 0 * * ?
+            services:
+               sauce:
+                  endpoint: https://osb.princast.org/SistemasVerticales/wsSauce/2.0
+    cors:
+      allowed-origins:
+        - "*"
+      allowedMethods:
+        - "*"
+      allowedHeaders:
+        - "*"
+    conveniob:
+      fechaconveniob: 2022-06-01T00:00:00
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health

@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comision_servicio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ad7e390c-e445-41df-8e11-3c8a6ddf8fe3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO1" class="Object" isForPrompting="false"/>
+	<parameter name="P_LOGO2" class="Object" isForPrompting="false"/>
+	<parameter name="P_MARCA_AGUA" class="Object" isForPrompting="false"/>
+	<parameter name="P_PROFESOR" class="es.princast.gepep.domain.Profesor" isForPrompting="false"/>
+	<parameter name="P_ENCABEZADO1" class="java.lang.String"/>
+	<parameter name="P_ANIO" class="java.lang.String"/>
+	<parameter name="P_BIMESTRAL" class="java.lang.String"/>
+	<parameter name="P_SUBREPORT" class="java.lang.Object"/>
+	<parameter name="P_VISITA_TUTOR" class="es.princast.gepep.domain.VisitaTutor" isForPrompting="false"/>
+	<parameter name="P_FECHA_FIRMA" class="java.lang.String"/>
+	<parameter name="P_LOC_CENTRO" class="java.lang.String"/>
+	<parameter name="P_PRECIOS" class="es.princast.gepep.domain.Precios" isForPrompting="false"/>
+	<parameter name="P_CENTRO" class="es.princast.gepep.domain.Centro" isForPrompting="false"/>
+	<parameter name="P_TELEFONO" class="java.lang.String"/>
+	<parameter name="P_NUM_MANUTENCION" class="java.lang.Integer"/>
+	<parameter name="P_TOTAL_KM" class="java.lang.Integer"/>
+	<parameter name="P_SECRETARIO" class="java.lang.String"/>
+	<parameter name="P_TOTAL_BILLETES" class="java.lang.Float"/>
+	<parameter name="P_TOTAL_IMPORTE_KM" class="java.lang.Float"/>
+	<parameter name="P_TOTAL_IMPORTE" class="java.lang.Float"/>
+	<parameter name="tPublico" class="java.lang.Boolean"/>
+	<parameter name="tPrivado" class="java.lang.Boolean"/>
+	<parameter name="P_LISTA_COMISIONES" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="P_CATEG_TIPO_PRACT" class="java.lang.String"/>
+	<field name="itinerario" class="java.lang.String"/>
+	<field name="horaEntrada" class="java.lang.Integer"/>
+	<field name="minEntrada" class="java.lang.Integer"/>
+	<field name="horaSalida" class="java.lang.Integer"/>
+	<field name="minSalida" class="java.lang.Integer"/>
+	<field name="importeDietas" class="java.lang.Float"/>
+	<field name="importeBilletes" class="java.lang.Float"/>
+	<field name="importeKm" class="java.lang.Float"/>
+	<field name="motivo1" class="java.lang.Boolean"/>
+	<field name="motivo2" class="java.lang.Boolean"/>
+	<field name="motivo3" class="java.lang.Boolean"/>
+	<field name="motivo4" class="java.lang.Boolean"/>
+	<field name="km" class="java.lang.Integer"/>
+	<background>
+		<band height="800" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="21" y="128" width="519" height="531" uuid="4e5d0582-657c-47b1-9627-27b08831f40e"/>
+				<imageExpression><![CDATA[$P{P_MARCA_AGUA}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<detail>
+		<band height="800" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="71" width="160" height="12" uuid="57fcccc0-dcdf-44b4-93c0-31db76213fe7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[INTERESADO: APELLIDOS Y NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="71" width="76" height="12" uuid="40fd82ee-ff60-4148-a3c7-76bb92f21e34"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[D.N.I. / N.I.F.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="87" width="281" height="15" uuid="aace8d25-c2af-4532-b828-1b41d3c2d371"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROFESOR}.getApellido1().toUpperCase() + " " + $P{P_PROFESOR}.getApellido2().toUpperCase() + ", " +$P{P_PROFESOR}.getNombre().toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="87" width="76" height="15" uuid="ce73ff92-2ed3-4ff1-b95f-0654f625b278"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROFESOR}.getNif()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="108" width="160" height="12" uuid="4e122927-b783-42e5-98c9-294f3147024f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CORREO ELECTRÓNICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="108" width="126" height="12" uuid="9fde5bd5-959d-4888-9e4d-f6f714599560"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO DE CONTACTO]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="125" width="380" height="15" uuid="136d7eed-96ba-4a7e-bbb4-894b3a7883e9"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROFESOR}.getEmail()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="404" y="125" width="151" height="15" uuid="7c8380fc-5f5c-4d38-a45a-63065a2778aa"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_TELEFONO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="149" width="130" height="12" uuid="29e7fb76-7bd7-4f80-9227-00baa6000fc5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CUERPO AL QUE PERTENECE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="169" width="80" height="12" uuid="85c11418-5326-4d99-85f1-6c7673e2a965"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TIPO PERSONAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="189" width="130" height="12" uuid="59aaccd6-0885-44e0-baf4-35b57505422d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CATEGORÍA ADMINISTRATIVA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="189" width="40" height="12" uuid="9aa045eb-a5ea-4354-8e9f-d7c252e37fa7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[GRUPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="208" width="130" height="12" uuid="ec4fd8e2-ce74-4446-91b3-6c1f7db0307e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE DESTINO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="208" width="50" height="12" uuid="985480ed-9ac8-4617-ada7-9e18a4e70367"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[LOCALIDAD]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement x="134" y="148" width="413" height="15" uuid="0184ea1a-7782-42df-b52d-9783be4aea38"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROFESOR}.getCuerpo()!=null?$P{P_PROFESOR}.getCuerpo():"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="223" width="320" height="15" uuid="e9e8cfa9-a09d-4dc4-bf32-b4f07874981e"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CENTRO}.getNombre()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="223" width="202" height="15" uuid="bc7efd6a-de95-403e-be5a-4af983c93ba3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CENTRO}.getLocalidad()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="247" width="110" height="14" uuid="8a9ade10-5991-47cb-9d53-edf77dcb5776"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medio de locomoción]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="1" y="266" width="552" height="74" uuid="feff618d-06f9-482e-a3ac-da81e672d1da"/>
+				<rectangle radius="6">
+					<reportElement mode="Transparent" x="0" y="0" width="552" height="69" uuid="4c164a88-7d3f-432a-be3f-57814a901d21"/>
+				</rectangle>
+				<textField>
+					<reportElement x="10" y="29" width="100" height="18" uuid="fc43f1f0-6132-4bed-83d0-ee54d4910b64">
+						<printWhenExpression><![CDATA[$P{tPrivado} == true]]></printWhenExpression>
+					</reportElement>
+					<textFieldExpression><![CDATA["Transporte Privado"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="364" y="4" width="50" height="15" uuid="3d991b62-6c73-45a0-855f-13c29e2a2ce9"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MARCA]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="314" y="19" width="100" height="15" uuid="db57b416-37f8-4ff3-93f8-0236963217df"/>
+					<textFieldExpression><![CDATA[$P{P_PROFESOR}.getVehiculo()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="365" y="35" width="78" height="15" uuid="6a1daaf4-3e2c-40c0-8149-91fe474d6199"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MATRICULA]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="315" y="50" width="100" height="15" uuid="29eb2a6d-f43c-4c24-9e12-6bd2ec173a9a"/>
+					<textFieldExpression><![CDATA[$P{P_PROFESOR}.getMatricula()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="6" width="100" height="18" uuid="f8de827d-5f82-4130-bfe5-0807bd160357">
+						<printWhenExpression><![CDATA[$P{tPublico} == true]]></printWhenExpression>
+					</reportElement>
+					<textFieldExpression><![CDATA["Transporte Público"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="1" y="343" width="278" height="232" uuid="c0a8ea44-8cb1-4081-af67-9fa7911cf957"/>
+				<rectangle radius="6">
+					<reportElement mode="Transparent" x="0" y="0" width="278" height="232" uuid="5bbcac7c-13a9-42d1-a5fe-b3077d5f270c"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="7" y="4" width="100" height="15" uuid="e6362204-0d24-4592-89c0-a4f4d45d15e1"/>
+					<textElement>
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AUTORIZACIÓN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="20" width="270" height="42" uuid="b639f2fa-f2fd-4a61-aa1d-6c170e07cae5"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Al objeto de atender las necesidades del servicio, se expide la presente orden de viaje a los lugares señalados al dorso, utilizando el medio de locomoción indicado.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="33" y="76" width="207" height="15" uuid="689a6371-71a8-4815-b713-ef6d6e18ce18"/>
+					<textFieldExpression><![CDATA["En "+ $P{P_LOC_CENTRO} +", a        de                      de "]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="96" width="270" height="14" uuid="6b88e39f-d4b2-4edb-926d-462851392d25"/>
+					<textElement textAlignment="Center">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[El/La director/a del Centro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="110" width="270" height="26" uuid="3cc2d4be-24eb-45c3-b053-eedcc531f8df"/>
+					<textElement textAlignment="Center">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[P.D. Resolución de 6 de septiembre de 2023 (BOPA 14/09/2023)]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="4" y="205" width="270" height="14" uuid="203b9a37-4493-4aa9-bf3e-aa5bc89807dc"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["Fdo.: "+$P{P_CENTRO}.getDirector()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="281" y="343" width="272" height="50" uuid="a79708c0-0b06-4976-8586-fa843ecb1a71"/>
+				<rectangle radius="6">
+					<reportElement mode="Transparent" x="0" y="0" width="272" height="50" uuid="eceacb17-f52e-4e60-9eb0-7580ffb345e4"/>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="3" y="2" width="236" height="11" uuid="3f5748cc-99c7-43a5-9689-3b9b05df65f6"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ANEXO: INDEMNIZACIONES POR RAZÓN DE SERVICIO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="20" width="56" height="11" uuid="f8a6259d-1563-45ea-bfda-9da87282c747"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Manutención: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="170" y="20" width="50" height="11" uuid="35282387-0cde-4626-aead-f3002ff81501"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Kilometraje:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="63" y="17" width="43" height="16" uuid="545a5138-ec1d-4332-94d9-85c587ef8693"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{P_PRECIOS}.getPrecioMediaManut()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="110" y="17" width="43" height="16" uuid="b5197b59-905a-49f0-a87a-1166594b9f18"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textFieldExpression><![CDATA[$P{P_PRECIOS}.getPrecioEnteraManut()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="224" y="17" width="43" height="16" uuid="8937fc83-9736-4c59-ac40-44715937cd49"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$P{P_PRECIOS}.getPrecioKm()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="63" y="35" width="43" height="11" uuid="0520e4b7-c005-40c8-8cb5-6f371fc93efd"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Media]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="110" y="35" width="43" height="11" uuid="dae19ef4-5a65-4e07-b787-4dc49ae7c173"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Completa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="224" y="35" width="43" height="11" uuid="b2fbd981-5e07-401d-8114-d2dd2e81009b"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Km]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="281" y="395" width="272" height="180" uuid="beda213a-73c1-49fb-a4e8-897a46f4c8a2"/>
+				<rectangle radius="6">
+					<reportElement mode="Transparent" x="0" y="0" width="272" height="180" uuid="2e14e9ec-9918-4a46-b515-85cf97b8fefc"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="7" y="4" width="72" height="15" uuid="5935562d-25b0-44ad-b429-8cf9a51a0e7b"/>
+					<textElement>
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LIQUIDACIÓN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="127" y="10" width="54" height="12" uuid="51fdda48-9916-4add-93db-58c44ed058b5"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[PROGRAMA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="220" y="10" width="39" height="12" uuid="6b10af78-5fc4-41ba-970b-eb85a6415aec"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[CÓDIGO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="134" y="27" width="40" height="14" uuid="bdd5867a-857c-45bd-8fc1-1ba2b891af30"/>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["422-B"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="27" width="40" height="14" uuid="029c1a80-e421-4a88-876c-df34c4508ad3"/>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["B"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="26" y="49" width="35" height="12" uuid="e8b3f324-55ee-4346-959d-7b4fca4edbc9"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Media]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="26" y="63" width="43" height="16" uuid="e44c3d41-a33d-4fb6-82b0-ca1dab067481"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_NUM_MANUTENCION}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="142" y="63" width="43" height="16" uuid="2ec16184-db8e-482f-aee6-61371d0ed9c9"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_NUM_MANUTENCION} * $P{P_PRECIOS}.getPrecioMediaManut()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="142" y="49" width="35" height="12" uuid="afdb4dde-fd64-43a6-9402-c731e50d1ee2"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="187" y="64" width="14" height="14" uuid="4b92c5cd-1e23-4f40-9160-bc750ad61364"/>
+					<text><![CDATA[€.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="81" width="71" height="15" uuid="9578573f-3c23-4368-9760-f5c41e941b65"/>
+					<textElement>
+						<font size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[LOCOMOCION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="101" width="54" height="12" uuid="51b9f706-3425-46ad-891a-475f1c007e13"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Total Km]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="142" y="115" width="59" height="16" uuid="9159235a-2b60-4d7a-99c9-58d02f671eba"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_TOTAL_IMPORTE_KM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="142" y="101" width="88" height="12" uuid="a08d6bd1-d8d9-405d-bddf-1a33e70c514f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Importe Km realizados]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="19" y="115" width="60" height="16" uuid="a042484c-63b9-4a0c-88b4-011630239e90"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_TOTAL_KM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="8" y="138" width="130" height="15" uuid="a136b910-8354-4a17-8ad5-0ea00514c928"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IMPORTE TOTAL LIQUIDACIÓN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="142" y="148" width="88" height="12" uuid="e1d50fb2-e665-4c40-8b29-898d4e5871d5"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Billetes y Justificantes]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="8" y="162" width="71" height="16" backcolor="#FF9966" uuid="1a40dc61-e985-4a7a-a8d0-ed51dee57a7b"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_TOTAL_IMPORTE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="142" y="162" width="59" height="16" uuid="32a9b5d8-8bf4-4b15-9dfe-6c3fe0009f6b"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_TOTAL_BILLETES}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="81" y="163" width="14" height="14" uuid="ce0f004b-4820-4ea4-91a0-546a9713d8c7"/>
+					<text><![CDATA[€.]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="5" y="578" width="270" height="30" uuid="85a0dc6a-65fa-439b-af6a-e208878f85f3"/>
+				<textElement markup="html"/>
+				<text><![CDATA[<b>CONFIRMO: </b>Que han sido realizadas las comisiones de servicio encomendadas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="578" width="263" height="30" uuid="86b25fe5-7b8f-494f-861a-23ce76ea96e1"/>
+				<text><![CDATA[Declaro que son ciertos los datos y los importes señalados en la presente cuenta-liquidación]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="618" width="270" height="20" uuid="42637b5d-3c02-43c2-beef-b626af9efb16"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{P_FECHA_FIRMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="618" width="268" height="20" uuid="3c8ef658-bb0c-4c7f-912b-a0ee87b37ce3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{P_FECHA_FIRMA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="648" width="270" height="20" uuid="aad8752f-8071-4b4b-9ec2-990fdae0019f"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[EL/LA SECRETARIO/A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="648" width="270" height="20" uuid="2c0ed59f-f942-42aa-bc3f-5f07c02b74f2"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[EL/LA INTERESADO/A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="744" width="100" height="10" uuid="12e0bbb0-dc27-49f8-8ef6-7c4a413827f3"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[(Sello del Centro)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="8" y="764" width="271" height="31" uuid="0e70949e-bdf0-4545-85bc-3c3816d12a3e"/>
+				<textFieldExpression><![CDATA["Fdo.: "+$P{P_SECRETARIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="764" width="254" height="31" uuid="78b2bebf-07c8-447e-b27a-91ece11a7621"/>
+				<textFieldExpression><![CDATA["Fdo.: "+$P{P_PROFESOR}.getApellido1().toUpperCase() + " " + $P{P_PROFESOR}.getApellido2().toUpperCase() + ", " +$P{P_PROFESOR}.getNombre().toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="0" width="318" height="35" uuid="6a37ada6-b5f1-4056-85c3-28835feb3fd3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_ENCABEZADO1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="34" width="40" height="15" uuid="c1768340-5a4d-4bca-aa65-67c89acad4f1"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[AÑO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="34" width="70" height="15" uuid="ed1eba06-46a1-4002-b260-60230d30040e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[BIMESTRAL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="51" width="40" height="15" uuid="d96d5107-d3a8-46aa-a3c9-f6ca5bac9405"/>
+				<textFieldExpression><![CDATA[$P{P_ANIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="51" width="110" height="15" uuid="350dfb6f-118e-4005-a011-2bc6682e547f"/>
+				<textFieldExpression><![CDATA[$P{P_BIMESTRAL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="188" width="93" height="15" uuid="e732a789-1b8a-4bc0-9a6b-dcff84dd5d00"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROFESOR}.getGrupo()!=null?$P{P_PROFESOR}.getGrupo():"-"]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle">
+				<reportElement mode="Opaque" x="1" y="-1" width="157" height="61" uuid="3ba6efe4-7009-48a9-a55d-27848dd5032b"/>
+				<imageExpression><![CDATA[$P{P_LOGO1}]]></imageExpression>
+			</image>
+			<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle">
+				<reportElement mode="Opaque" x="476" y="0" width="77" height="47" uuid="0f0c3b50-1e8a-4f05-8e11-058ad14f30b1"/>
+				<imageExpression><![CDATA[$P{P_LOGO2}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="86" y="169" width="107" height="12" uuid="12e3e0a8-2ff8-4821-ba21-6271c810d0dd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CATEG_TIPO_PRACT}.equals( "ARTISTICA SUPERIOR" ) ?  "Fase de formación práctica"
+: 
+$P{P_CATEG_TIPO_PRACT}.equals( "ARTISTICA DE ARTES Y DISEÑO") ? "Fase de formación práctica"
+: 
+$P{P_CATEG_TIPO_PRACT}.equals( "DEPORTIVA") ? "Módulo formación práctica"
+: 
+"Docentes FCT"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="40">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<printWhenExpression><![CDATA[$P{P_LISTA_COMISIONES} != null]]></printWhenExpression>
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="0" width="555" height="40" uuid="6ad723fd-0b49-4887-9221-ce8738a93cd4"/>
+				<subreportParameter name="itinerario">
+					<subreportParameterExpression><![CDATA[$F{itinerario}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="horaEntrada">
+					<subreportParameterExpression><![CDATA[$F{horaEntrada}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="minEntrada">
+					<subreportParameterExpression><![CDATA[$F{minEntrada}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="horaSalida">
+					<subreportParameterExpression><![CDATA[$F{horaSalida}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="minSalida">
+					<subreportParameterExpression><![CDATA[$F{minSalida}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="importeDietas">
+					<subreportParameterExpression><![CDATA[$F{importeDietas}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="importeBilletes">
+					<subreportParameterExpression><![CDATA[$F{importeBilletes}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="importeKm">
+					<subreportParameterExpression><![CDATA[$F{importeKm}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="motivo1">
+					<subreportParameterExpression><![CDATA[$F{motivo1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="motivo2">
+					<subreportParameterExpression><![CDATA[$F{motivo2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="motivo3">
+					<subreportParameterExpression><![CDATA[$F{motivo3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="motivo4">
+					<subreportParameterExpression><![CDATA[$F{motivo4}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TOTAL_BILLETES">
+					<subreportParameterExpression><![CDATA[$P{P_TOTAL_BILLETES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_NUM_MANUTENCION">
+					<subreportParameterExpression><![CDATA[$P{P_NUM_MANUTENCION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_TOTAL_KM">
+					<subreportParameterExpression><![CDATA[$P{P_TOTAL_KM}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="km">
+					<subreportParameterExpression><![CDATA[$F{km}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{P_LISTA_COMISIONES}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{P_SUBREPORT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

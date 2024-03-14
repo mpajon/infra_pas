@@ -1,0 +1,37 @@
+# vi: set ft=ruby :
+Vagrant.configure("2") do |config|
+  config.vm.box_url = "http://vagrantbox.asnw.inetum.com/jboss-eap-72-sles.json"
+  config.vm.box = "mntpa/jboss-eap-72-sles-standalone"
+
+config.vm.provider "virtualbox" do |vb|
+   vb.name = "jboss-eap"
+   vb.memory = "2048"
+end
+
+  config.vm.network "forwarded_port", guest: 80, host:   80  # HTTP
+  config.vm.network "forwarded_port", guest: 443, host:  443  # HTTPS
+  config.vm.network "forwarded_port", guest: 543,  host:  543  # HTTPS con certificado
+  config.vm.network "forwarded_port", guest: 9443, host: 9443  # Consola admon JBoss
+  config.vm.network "forwarded_port", guest: 9999, host: 9999  # Despliegue remoto JBoss
+  config.vm.network "forwarded_port", guest: 8787, host: 8787  # Debug remoto JBoss
+
+  config.vm.provision "shell" do |shell|
+    shell.inline = "sudo chattr -i /etc/resolv.conf && sudo sed -i 's/10.200.72.5/172.17.134.1/' /etc/resolv.conf"
+  end
+
+  config.vm.provision "provision system resources", type: "shell", path: "src/conf/system-provision.sh"
+  config.vm.provision "shell" do |shell|
+    shell.env = {"JAVA_HOME" => "/opt/jboss/jdk11"}
+    shell.inline = "/opt/jboss/EAP7/bin/jboss-cli.sh --connect --file=/vagrant/src/conf/jboss-config.txt"
+  end
+
+  config.vm.post_up_message = <<-MESSAGE
+    All done!
+
+    - Acceso a consola de administracion JBoss local:
+
+        URL:            https://localhost:9443
+        Credenciales:   jbadmin / Password1$
+  MESSAGE
+
+end

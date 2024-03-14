@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+    <mirrors>
+        <mirror>
+            <id>nexus</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://nexus/repository/public</url>
+        </mirror>
+    </mirrors>
+
+    <servers>
+
+
+
+        <server>
+            <id>inhouse.releases</id>
+            <username>mantenimiento</username>
+            <password>mantenimiento</password>
+        </server>
+
+        <server>
+            <id>inhouse.snapshots</id>
+            <username>mantenimiento</username>
+            <password>mantenimiento</password>
+        </server>
+
+    </servers>
+
+
+
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>nexus</id>
+                    <url>http://10.10.6.12:8081/nexus/content/groups/public</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+            <properties>
+                <git.user>root</git.user>
+                <git.password>formacion</git.password>
+                <signature.ca>acpa</signature.ca>
+                <oc4j.home>c:/desarrollo/java/install/oc4j</oc4j.home>
+                <apps.base.dir>c:/config</apps.base.dir>
+                <app.local.log.dir>/vagrant/logs</app.local.log.dir>
+                <svn.base.j2ee>http://clinker-frontend/svn/appsj2ee</svn.base.j2ee>
+                <distribution.url.release>https://nexus.asnw.inetum.com/repository/maven-releases/</distribution.url.release>
+                <distribution.url.snapshot>https://nexus.asnw.inetum.com/repository/maven-snapshots/</distribution.url.snapshot>
+                <sonar.host.url>http://sonarqube.devops.princast.org</sonar.host.url>
+                <sonar.scm.disabled>true</sonar.scm.disabled>
+                <!-- <maven.test.skip>true</maven.test.skip> -->
+                <jboss-as.username>jbadmin</jboss-as.username>
+                <jboss-as.password>Password1$</jboss-as.password>
+                <wildfly.protocol>remoting</wildfly.protocol>
+                <wildfly.port>9999</wildfly.port>
+                <wildfly.username>${jboss-as.username}</wildfly.username>
+                <wildfly.password>${jboss-as.password}</wildfly.password>
+                <maven.artifact.threads>10</maven.artifact.threads>
+            </properties>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+            
+</settings>

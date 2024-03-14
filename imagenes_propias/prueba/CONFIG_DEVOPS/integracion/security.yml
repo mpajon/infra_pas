@@ -1,0 +1,4 @@
+keycloak:
+  realm: Educacion
+  auth-server-url: https://integrhsso.asturias.es/auth
+  resource: gepep

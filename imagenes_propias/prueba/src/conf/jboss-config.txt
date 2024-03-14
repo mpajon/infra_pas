@@ -1,0 +1,31 @@
+/subsystem=datasources/data-source="gepepDS":add(\
+ jta="true",\
+ jndi-name="java:/jdbc/gepepDS",\
+ use-ccm="true",\
+ statistics-enabled="false",\
+ connection-url="jdbc:postgresql://tcls13edu.princast.org:5432/gepep_bd",\
+ driver-class="org.postgresql.Driver",\
+ driver-name="postgresql",\
+ max-pool-size="50",\
+ min-pool-size="25",\
+ pool-prefill="true",\
+ flush-strategy="FailingConnectionOnly",\
+ valid-connection-checker-class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker",\
+ exception-sorter-class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter",\
+ user-name="gepep_user",\
+ password="NDwoXvwE",\
+ validate-on-match="true",\
+ background-validation="false",\
+ set-tx-query-timeout="false",\
+ blocking-timeout-wait-millis="30000",\
+ idle-timeout-minutes="30",\
+ query-timeout="0",\
+ use-try-lock="0",\
+ allocation-retry="0",\
+ allocation-retry-wait-millis="5000",\
+ prepared-statements-cache-size="100",\
+ share-prepared-statements="false")
+
+/subsystem=datasources/data-source=gepepDS:write-attribute(name=enabled,value=true)
+
+:shutdown(restart=true)

@@ -1,0 +1,87 @@
+pipeline {
+
+   agent any
+
+   environment {
+     SVN_BASE = 'svn://svn.asturias.es/LAMant/appsEDUCACION/GEPEP_BACK'
+     APP_NAME = readMavenPom().getArtifactId()
+     APP_VERSION = readMavenPom().getVersion()
+   }
+
+    tools {
+        maven 'Maven 3.8.5'
+        jdk 'openjdk11'
+    }
+
+    stages {
+
+    	stage('Clone repository') {
+    		steps {
+    		    checkout scm
+    		}
+    	}
+
+	    stage('Build application') {
+	        steps {
+	           sh 'mvn clean package -U'
+	        }
+	    }
+
+	   stage('Deployment to CONSO') {
+            when { branch 'develop' }
+            steps {
+                sh 'mvn wildfly:undeploy wildfly:deploy-only -Dwildfly.hostname=172.30.0.26 -Dwildfly.port=9999 -Djboss-as.username=jbadmin -Djboss-as.password=Password1$ -Dwildfly.serverGroups=desa2backc1s2'
+            }
+            post {
+                success  {
+                    slackSend (channel: 'gepep', color: '#0101DF', message: "Completado despliegue de <https://desa5eap7.asturias.es/gepep-back|${env.JOB_NAME}>")
+                }
+            }
+        }
+
+        stage('Code analysis') {
+            when { branch 'develop' }
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.host.url=http://10.200.72.2:9009'
+            }
+        }
+        
+        stage('Smoke testing') {
+            when { branch 'develop' }
+            steps {
+                timeout(30) {
+                    waitUntil {
+                        script {
+                            def response = httpRequest (consoleLogResponseBody: true, 
+                                        httpMode: 'GET',
+                                        ignoreSslErrors : true,
+                                          url: "https://desa5eap7.asturias.es/gepep-back/actuator/health",
+                                        validResponseCodes: '200');
+                            return (response.status == 200);
+                        }
+                    }
+                }
+            }
+        }        
+
+        stage('Release to PA') {
+            when { branch 'master' }
+            tools { maven 'Maven 3.8.5' }
+            steps {
+                sh 'mvn clean package'
+                sh "bash /var/jenkins_home/userContent/git2svn.sh $APP_NAME $APP_VERSION \"$SVN_BASE\""
+            }
+            post {
+                success  {
+                    slackSend (channel: 'gepep', color: '#0101DF', message: "Liberada versión $APP_VERSION en la ruta $SVN_BASE")
+                }
+            }
+        }
+    }
+
+    post {
+        failure {
+               slackSend (channel: 'gepep', color: '#f20202', message: "Error desplegando ${env.JOB_NAME} (<${env.BUILD_URL}|Open>)")
+           }
+    }
+}

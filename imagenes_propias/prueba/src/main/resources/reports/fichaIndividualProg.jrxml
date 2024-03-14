@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fichaIndividualProg" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="dd0a228d-e37a-45d8-a3a9-e1be4db04971">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_DISTRIBUCION" class="es.princast.gepep.domain.Distribucion" isForPrompting="false"/>
+	<parameter name="P_LOGO1" class="Object" isForPrompting="false"/>
+	<parameter name="P_LOGO2" class="Object" isForPrompting="false"/>
+	<parameter name="P_MARCA_AGUA" class="Object" isForPrompting="false"/>
+	<parameter name="P_DIRECCION" class="java.lang.String"/>
+	<parameter name="P_HORARIOS" class="java.lang.String"/>
+	<parameter name="P_DOCUMENTO" class="es.princast.gepep.domain.Documento" isForPrompting="false"/>
+	<parameter name="P_HORAS" class="java.lang.Integer"/>
+	<parameter name="P_EF1" class="java.lang.String"/>
+	<parameter name="P_EF2" class="java.lang.String"/>
+	<parameter name="P_EF3" class="java.lang.String"/>
+	<parameter name="P_EF4" class="java.lang.String"/>
+	<parameter name="P_CATEG_TIPO_PRACT" class="java.lang.String"/>
+	<field name="resultadoAprendizaje" class="java.lang.String"/>
+	<field name="realizaciones" class="java.lang.String"/>
+	<field name="criteriosEvaluacion" class="java.lang.String"/>
+	<field name="textoEF1" class="java.lang.String"/>
+	<field name="textoEF2" class="java.lang.String"/>
+	<field name="textoEF3" class="java.lang.String"/>
+	<field name="textoEF4" class="java.lang.String"/>
+	<variable name="isLast" class="java.lang.Boolean">
+		<variableExpression><![CDATA[$V{MASTER_CURRENT_PAGE}.equals($V{MASTER_TOTAL_PAGES})]]></variableExpression>
+	</variable>
+	<background>
+		<band height="504" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="80" y="40" width="632" height="460" uuid="4f5eeb01-2d4d-4313-b649-920fa095ab22"/>
+				<imageExpression><![CDATA[$P{P_MARCA_AGUA}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="146" splitType="Stretch">
+			<frame>
+				<reportElement x="49" y="2" width="700" height="69" uuid="a82ba57c-e29d-450e-9bd8-c26bcd7589e3"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="1" y="0" width="151" height="69" uuid="5ad603da-3040-409d-b80d-8f4152ae71de"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle">
+						<reportElement mode="Opaque" x="10" y="2" width="131" height="64" uuid="c0b9e215-ee69-4e32-9aa8-bdc89611c477"/>
+						<imageExpression><![CDATA[$P{P_LOGO1}]]></imageExpression>
+					</image>
+				</frame>
+				<frame>
+					<reportElement x="599" y="0" width="100" height="69" uuid="a2c423dd-8218-44c1-b587-906450c120f6"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+					</box>
+					<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle">
+						<reportElement mode="Opaque" x="11" y="11" width="80" height="45" uuid="1344f6d4-9050-4a03-b511-221a25422847"/>
+						<imageExpression><![CDATA[$P{P_LOGO2}]]></imageExpression>
+					</image>
+				</frame>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="152" y="44" width="447" height="15" uuid="ec79fb5c-bb79-4fab-bf78-cd6e7c30430f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_DOCUMENTO}.getEncabezado2()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="152" y="12" width="447" height="35" uuid="5e09893e-c121-4119-9385-0513251f8857"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{P_DOCUMENTO}.getEncabezado()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="77" width="802" height="64" uuid="3d22d1f5-9d7e-4def-9ea3-9574e640000d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="0" y="0" width="802" height="13" uuid="fbd28f7a-0892-4f29-8464-8d66d20d379e"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="235" height="13" uuid="eddc0973-f8c2-4f79-8e98-6f266061df37"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" CLAVE DEL CICLO:   " + $P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getOferta().getCodigo()]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="235" y="0" width="124" height="13" uuid="e0ca1837-14ca-42e1-aa58-4d279a40ca05"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" CURSO: " + $P{P_DISTRIBUCION}.getMatricula().getAnio() + "-" +  ( $P{P_DISTRIBUCION}.getMatricula().getAnio() + 1)]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="630" y="0" width="60" height="13" uuid="1b63165d-f2ba-40fc-8642-b3ac91455287"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" Nº PÁGINAS: "]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="690" y="0" width="13" height="13" uuid="43b04946-187b-4714-b816-a44f743deb22"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Report">
+						<reportElement x="703" y="0" width="79" height="13" uuid="da14df6c-0995-49e1-afb0-b6120bc4eecd"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="359" y="0" width="261" height="13" uuid="5dbd2034-f193-4edb-b167-594da95545f3"/>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+							<paragraph leftIndent="4"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{P_CATEG_TIPO_PRACT}.equals( "FCT" ) ?  "Nº DE HORAS DE FCT: " + $P{P_HORAS}
+:
+$P{P_CATEG_TIPO_PRACT}.equals( "DEPORTIVA" ) ?  "Nº DE HORAS DEl MÓDULO: " + $P{P_HORAS}
+:
+$P{P_CATEG_TIPO_PRACT}.equals( "ARTISTICA SUPERIOR" ) ?  "Nº DE HORAS FASE FORMACIÓN: " + $P{P_HORAS}
+: 
+$P{P_CATEG_TIPO_PRACT}.equals( "ARTISTICA DE ARTES Y DISEÑO") ? "Nº DE HORAS FASE FORMACIÓN: " + $P{P_HORAS}
+: 
+"Nº DE HORAS: " + $P{P_HORAS}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="13" width="802" height="13" uuid="4da9a3ba-6495-44d4-a2fe-a51b3618dacb"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="300" height="13" uuid="0e856960-1726-4d6d-9149-f008b970437a"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" ALUMNO/A: " + ($P{P_DISTRIBUCION}.getMatricula().getAlumno().getNombre()!=null?$P{P_DISTRIBUCION}.getMatricula().getAlumno().getNombre().toUpperCase():"") +" "+ ($P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido1()!=null?$P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido1().toUpperCase(): "")+ " "+($P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido2()!=null?$P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido2().toUpperCase(): "")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="300" y="0" width="330" height="13" uuid="647ffb56-5063-4688-8f26-c0b0a819c6ea"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" DIRECCIÓN: " +($P{P_DIRECCION}!=null? $P{P_DIRECCION} : "")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="630" y="0" width="172" height="13" uuid="a96ba1a8-ab27-4806-a3ea-8ca3b866cfff"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" TELÉFONO: " + ($P{P_DISTRIBUCION}.getMatricula().getAlumno().getTelefono()!=null?$P{P_DISTRIBUCION}.getMatricula().getAlumno().getTelefono(): "")]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="26" width="802" height="13" uuid="f143f1de-55d6-41f0-8ba4-d1abe3272648"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="300" height="13" uuid="29c91e11-f418-4d81-9f89-e75ad2ff1d9d"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" PERIODO DE REALIZACIÓN DEL " + 
+$P{P_DISTRIBUCION}.getDiaIni() + "/" + $P{P_DISTRIBUCION}.getMesIniDistribucion() + "/" + $P{P_DISTRIBUCION}.getAnioIni() + " AL " + 
+$P{P_DISTRIBUCION}.getDiaFin() + "/" + $P{P_DISTRIBUCION}.getMesFinDistribucion() + "/" + $P{P_DISTRIBUCION}.getAnioFin()]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="300" y="0" width="502" height="13" uuid="81409f08-e726-4a26-b0fe-cbc23d8ddad3"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" HORARIO DE REALIZACIÓN: "+($P{P_HORARIOS}!=null?$P{P_HORARIOS}:"")]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="39" width="802" height="13" uuid="d0e1007b-fd6c-484b-b67c-a9c55f202bcd"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="300" height="13" uuid="16ff3224-3877-4553-ad17-0f62fbdeea23"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" CENTRO DOCENTE: " + $P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getCentro().getNombre()]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="300" y="0" width="330" height="13" uuid="655fdfc8-416a-49e8-8bf3-eb55eadf0720"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" TUTOR/A CENTRO DOCENTE: " +($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!=null && $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getNombre()!=null?$P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getNombre().toUpperCase():"")+" "+ ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!=null &&$P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido1()!=null?$P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido1().toUpperCase(): "")+ " "+($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!=null &&$P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido2()!=null?$P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido2().toUpperCase(): "")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="630" y="0" width="172" height="13" uuid="d4c46c0d-14e2-4253-a49e-8e93b934a638"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" TELÉFONO: " +($P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getCentro().getTelefono()!=null?$P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getCentro().getTelefono(): "")]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="52" width="802" height="12" uuid="f421835c-d73f-49b8-9d72-ebe9ee1df8b5"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="300" height="12" uuid="711ce3ee-ce5f-4a30-b516-efdc0d5c25f6"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" ENTIDAD COLABORADORA: " + ($P{P_DISTRIBUCION}.getAnexoContrato().getConvenio().getArea().getEmpresa().getNombre()!=null?$P{P_DISTRIBUCION}.getAnexoContrato().getConvenio().getArea().getEmpresa().getNombre().toUpperCase():"")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="300" y="0" width="330" height="12" uuid="0aef7a65-be7e-471a-a410-c6a290e443b5"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" TUTOR/A CENTRO DE TRABAJO: " +($P{P_DISTRIBUCION}.getTutorEmpresa()!=null?$P{P_DISTRIBUCION}.getTutorEmpresa().toUpperCase():"")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="630" y="0" width="172" height="12" uuid="6019ebc9-bf2d-4bfa-8ac3-adbe93fd8f9e"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[" TELÉFONO: " +($P{P_DISTRIBUCION}.getAnexoContrato().getConvenio().getArea().getTelefono()!=null? $P{P_DISTRIBUCION}.getAnexoContrato().getConvenio().getArea().getTelefono() : "")]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="330" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="802" height="49" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3e6158f4-812b-499c-b167-6c493bd64fd3">
+					<property name="ShowOutOfBoundContent" value="false"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="1" width="802" height="13" isPrintWhenDetailOverflows="true" uuid="ca8c0ffb-bb75-480b-acbe-71decb7698d5"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="548" height="13" isPrintWhenDetailOverflows="true" uuid="76ee700e-e6ba-4931-99f3-e808fd279807"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[PROGRAMACIÓN Y SEGUIMIENTO]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="549" y="0" width="252" height="13" isPrintWhenDetailOverflows="true" uuid="22e44b1f-fd88-4ede-adde-7a0401890ce9"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[VALORACIÓN]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="14" width="121" height="35" uuid="23802101-9426-4488-a069-9cc21e061944"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="121" height="35" uuid="88d29486-307e-463d-b9ac-6aede56e0d21"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{P_EF1}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="121" y="14" width="189" height="35" uuid="a6ffa6c5-abb3-48dd-b83a-1e42745a6fc1"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="189" height="35" uuid="5f73b224-4591-4a48-ac95-77acb44cd779"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{P_EF2}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="310" y="14" width="58" height="35" uuid="b579b648-749a-4ad2-a473-d101311f08b2"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<staticText>
+						<reportElement x="1" y="0" width="56" height="35" uuid="b98549d1-df0e-45cd-a824-5ec3aabd254d"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[SEMANAS POR
+ DPTO.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="368" y="14" width="181" height="35" uuid="3986b94f-b02d-4c0f-8c56-8d7c8e0ba7dc"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="181" height="35" uuid="cbbaf72e-e941-4e3b-88c3-3b2f308fd90a"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{P_EF3}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="549" y="14" width="42" height="35" uuid="eb1aaddf-b814-4380-90a7-4db568f7ee73"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<staticText>
+						<reportElement x="2" y="0" width="38" height="35" uuid="1ea739d5-754d-441d-ab4a-c3c78a53420e"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[Apto.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="591" y="14" width="42" height="35" uuid="8b694139-beec-413d-930a-fc76e7d5b9d9"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<staticText>
+						<reportElement x="2" y="0" width="38" height="35" uuid="ddc5b87e-eafc-4252-877c-de804175e27e"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[No Apto.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="633" y="14" width="42" height="35" uuid="98bca26f-5614-4964-b957-19fc13c2971a"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<staticText>
+						<reportElement x="2" y="0" width="38" height="35" uuid="90c4663f-167d-40ab-87f2-4bfe0c86a6eb"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[No Realiza]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="675" y="14" width="127" height="35" isRemoveLineWhenBlank="true" uuid="0c249388-c145-42ad-9363-5ca153386932"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="126" height="35" uuid="1e41202b-2da2-4531-9f61-4b99cdab11cf"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[OBSERVACIONES]]></text>
+					</staticText>
+				</frame>
+			</frame>
+			<frame borderSplitType="DrawBorders">
+				<reportElement x="0" y="49" width="802" height="281" uuid="c693e865-2dfc-44a3-b3ca-cead74ea67b1"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" mode="Transparent" x="0" y="0" width="121" height="281" backcolor="#8A9AEB" uuid="370d8e04-8a59-46ed-9b86-be2dbacd6cb8"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left">
+						<font size="7"/>
+						<paragraph leftIndent="4" rightIndent="4" spacingBefore="2" spacingAfter="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{textoEF1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" mode="Transparent" x="121" y="0" width="189" height="281" backcolor="#C75554" uuid="c1fbe1ea-4116-4270-a0b3-d08d7d90cdd8"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left">
+						<font size="7"/>
+						<paragraph lineSpacing="Single" leftIndent="4" rightIndent="4" spacingBefore="2" spacingAfter="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{textoEF2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" mode="Transparent" x="368" y="0" width="180" height="281" backcolor="#91EBC4" uuid="39c0b995-9593-4bd9-b7d9-a5a7b6018c4f"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left">
+						<font size="7"/>
+						<paragraph leftIndent="4" rightIndent="4" spacingBefore="2" spacingAfter="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{textoEF3}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="549" y="0" width="42" height="281" isPrintWhenDetailOverflows="true" uuid="1d3bdfbd-564c-478c-bfab-075e0251b245"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="591" y="0" width="42" height="281" isPrintWhenDetailOverflows="true" uuid="a3400f43-21ce-4189-8464-5e13080c919e"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="633" y="0" width="42" height="281" isPrintWhenDetailOverflows="true" uuid="102e95a0-7b09-411b-a57d-2e654d26007c"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="675" y="0" width="126" height="281" isPrintWhenDetailOverflows="true" uuid="44aa3c23-8037-4f29-97a5-9238bee5ec23"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="310" y="0" width="58" height="281" isPrintWhenDetailOverflows="true" uuid="c54e115a-4233-47be-ad5c-65ee38eb5e92"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="121" y="0" width="1" height="281" isPrintWhenDetailOverflows="true" uuid="93536d2a-2501-41f6-a320-90fb9fe27043"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="75" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="75" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="802" height="73" forecolor="#000000" backcolor="#FFFFFF" uuid="35fe7f57-cbb0-49b6-92fb-d1369343836b"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="543" height="12" uuid="d7de1e3e-fa9b-4ca6-90bc-b6a4061ae600"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[En                             a      de                     de]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="13" width="130" height="60" uuid="f0b6ca97-d749-4397-bf7d-82c1a10952b6"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="0" y="24" width="129" height="35" uuid="b16183ff-475e-4d2c-aa25-26f6b1fad334">
+							<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaTutor() == true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor() != null? $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getNombre().toUpperCase():"") + " " + ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!= null? $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido1().toUpperCase():"") + " " + ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!=null ? $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido2().toUpperCase():"")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="2" width="129" height="28" uuid="af117231-541e-4e8c-81b3-fa74acf56214">
+							<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaTutor() == true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["TUTOR/A CENTRO\n" + "DOCENTE"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="135" y="13" width="130" height="60" uuid="c90b9d7d-a164-4ebf-a86b-9559200c0f27"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="0" y="24" width="130" height="35" uuid="3a3e2508-a5f7-49bf-8f1d-827b1457633a">
+							<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaEmpresa() == true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + ($P{P_DISTRIBUCION}.getTutorEmpresa()!=null ? $P{P_DISTRIBUCION}.getTutorEmpresa().toUpperCase() : "")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="2" width="130" height="28" uuid="c98647c5-ac92-4ca3-bd62-f5f447e0d9af">
+							<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaEmpresa() == true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["TUTOR/A CENTRO DE\n" + 
+"TRABAJO"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="270" y="13" width="135" height="60" uuid="51b853c2-daf8-4e4c-be23-074c18b73617"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="0" y="24" width="135" height="35" uuid="33ffc67c-2c86-4a44-9afd-30fc65e05636">
+							<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaCentro() == true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + ( $P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getCentro().getDirector()!=null? $P{P_DISTRIBUCION}.getMatricula().getOfertaCentro().getCentro().getDirector() : "")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="2" width="135" height="28" uuid="cdfebf3e-3836-4bcf-b2b4-cf9d7c92ce01">
+							<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaCentro() == true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["DIRECTOR/A DEL\n" + "CENTRO DOCENTE"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="410" y="13" width="133" height="60" uuid="be342e1b-efe6-4c3c-86cc-5d6b3adeb7ef"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="0" y="24" width="133" height="35" uuid="a6258041-1b7f-48fa-b68d-95e32212c406"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Fdo: " + ($P{P_DISTRIBUCION}.getMatricula().getAlumno().getNombre()!=null ? $P{P_DISTRIBUCION}.getMatricula().getAlumno().getNombre().toUpperCase():"") + " " + ($P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido1()!=null?$P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido1().toUpperCase():"") + " " + ($P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido2()!=null? $P{P_DISTRIBUCION}.getMatricula().getAlumno().getApellido2().toUpperCase():"")]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="2" width="133" height="28" uuid="ea943903-2e9c-4945-93a8-b5fa4763a8ec"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center">
+							<font size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA["EL ALUMNO/A"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="548" y="0" width="254" height="73" uuid="e7b37bbc-fa12-4262-85c8-094e2a681345"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="254" height="13" uuid="a622a3f0-4579-4522-a4eb-2f201280930e"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[  En                             a      de                     de]]></text>
+					</staticText>
+					<frame>
+						<reportElement x="0" y="13" width="125" height="60" uuid="a6b31fc6-bf60-457b-8fb1-ada0da118cc4"/>
+						<box>
+							<topPen lineWidth="1.0"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="1.0"/>
+						</box>
+						<textField>
+							<reportElement x="0" y="2" width="125" height="28" uuid="2d74c02d-23ee-4dfe-afdd-a38e7162f7dc">
+								<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaTutor() == true]]></printWhenExpression>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["TUTOR/A CENTRO\n" + "DOCENTE"]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="24" width="125" height="35" uuid="1705c8e7-2e9a-4f35-ad89-2eb47979fbb7">
+								<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaTutor() == true]]></printWhenExpression>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Bottom">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Fdo: " + ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor() != null? $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getNombre().toUpperCase():"") + " " + ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!= null? $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido1().toUpperCase():"") + " " + ($P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor()!=null ? $P{P_DISTRIBUCION}.getMatricula().getUnidad().getTutor().getApellido2().toUpperCase():"")]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement key="" x="130" y="13" width="124" height="60" uuid="f2f46590-9a40-45e5-847e-1cf9d3067121"/>
+						<box>
+							<topPen lineWidth="1.0"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textField>
+							<reportElement x="0" y="2" width="124" height="28" uuid="12e6f311-0e6b-46e7-81a8-ccef64bc0b3a">
+								<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaEmpresa() == true]]></printWhenExpression>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["TUTOR/A CENTRO DE\n" + 
+"TRABAJO"]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="24" width="124" height="35" uuid="53fe5eab-54ff-42a2-9ef1-04f43a00ea82">
+								<printWhenExpression><![CDATA[$P{P_DOCUMENTO}.getFirmaEmpresa() == true]]></printWhenExpression>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Bottom">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Fdo: " + ($P{P_DISTRIBUCION}.getTutorEmpresa()!=null?$P{P_DISTRIBUCION}.getTutorEmpresa().toUpperCase():"")]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		</band>
+	</summary>
+</jasperReport>

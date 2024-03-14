@@ -1,0 +1,78 @@
+server:
+    port: 8080
+
+spring:
+    datasource:
+           platform: postgres
+           url: jdbc:postgresql://tcls13edu.princast.org:5432/gepep_bd
+           username: gepep_user
+           password: NDwoXvwE
+           driverClassName: org.postgresql.Driver
+    jpa:
+        show-sql: false
+        properties:
+          hibernate.generate_statistics: true
+    servlet:
+        multipart:
+            location: ./src/file_storage
+            enabled: true
+            file-size-threshold: 2MB
+            max-file-size: 20MB
+            max-request-size: 20MB
+    main:
+        allow-bean-definition-overriding: true
+    messages:
+        basename: classpath:messages
+    reports:
+        basename: classpath:reports
+    config:
+        basename: classpath:config
+
+lombok:
+    equalsAndHashCode:
+        callSuper: call
+
+keycloak:
+  realm: Educacion
+  auth-server-url: https://desarhssosa.asturias.es:8443/auth
+  resource: gepep
+        
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    es.princast: DEBUG
+    org.hibernate: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.stat: DEBUG
+    org.hibernate.type.descriptor.sql: INFO
+    springfox: WARN
+    
+####################################################################################
+
+## Para el arranque en localhost no se lee el fichero externo de configuracion    ##
+## (src/conf/application.yml). Se incluye a continuacion su contenido.            ##
+
+####################################################################################
+
+application:
+  cors:
+    allowed-origins:
+      - http://localhost:4200
+    allowedMethods:
+      - "*"
+    allowedHeaders:
+      - "*"
+  plaintsis:
+    username: UsuGepep
+    password: tn0QiKvS
+    sincrosauce:
+        registros: 500
+        ofuscar: true
+        permiteAnio: true
+    instructionSchedularTime: 0 5 1 * * ?
+    services:
+      sauce:
+        endpoint: http://desaosb.princast.org:7010/SistemasVerticales/wsSauce/2.0
+  conveniob:
+    fechaconveniob: 2022-06-01T00:00:00

@@ -1,0 +1,38 @@
+application:
+  plaintsis:
+    username: UsuGepep
+    password: tn0QiKvS
+    sincrosauce:
+        registros: 500
+        ofuscar: true
+        permiteAnio: true
+    ldap: ldaps://ldapeducainteg.princast.org
+    instructionSchedularTime: 0 5 0 * * ?
+    services:
+      sauce:
+        endpoint: https://integosb.princast.org/SistemasVerticales/wsSauce/2.0
+  cors:
+    allowed-origins:
+      - https://desa2eap7.asturias.es
+      - http://localhost:4200
+    allowedMethods:
+      - "*"
+    allowedHeaders:
+      - "*"
+  conveniob:
+    fechaconveniob: 2022-06-01T00:00:00
+
+spring:
+  servlet:
+    multipart:
+      location: ./src/file_storage
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
