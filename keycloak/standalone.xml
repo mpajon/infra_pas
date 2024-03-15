@@ -439,8 +439,8 @@
                 <staticMaxAge>2592000</staticMaxAge>
                 <cacheThemes>true</cacheThemes>
                 <cacheTemplates>true</cacheTemplates>
-                                <dir>${jboss.home.dir}/themes</dir>
-<modules>
+                <dir>${jboss.home.dir}/themes</dir>
+                <modules>
                     <module>
                         org.keycloak.samlClave.theme
                     </module>
