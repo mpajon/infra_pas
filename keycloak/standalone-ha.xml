@@ -504,8 +504,14 @@
                     <module>
                         org.keycloak.samlClave.theme
                     </module>
+                    <module>
+                        org.keycloak.j2ee.theme
+                    </module>
+                    <module>
+                        org.keycloak.educacion.theme
+                    </module>                    
                 </modules>
-            </theme>
+            </theme>                      
             <spi name="eventsStore">
                 <provider name="jpa" enabled="true">
                     <properties>
