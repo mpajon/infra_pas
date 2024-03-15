@@ -22,6 +22,10 @@ Crear los directorios en _$DOCKER_PATH_:
     
     $ sonarqube/sonarqube-postgresql
 
+## Arrancar en local
+
+    $ docker-compose --env-file ./local.env up -d
+
 # Sonar
 
 Cambiar los permisos al directorio _nexus_

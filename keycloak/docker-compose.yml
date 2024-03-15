@@ -3,7 +3,7 @@ version: '2.3'
 services:
 
   keycloak:
-      image: quay.io/keycloak/keycloak:15.0.2
+      image: registry.asnw.inetum.com/keycloak-clave:15.0.2
       container_name: keycloak
       environment:
         - KEYCLOAK_USER=admin
