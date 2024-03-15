@@ -4,7 +4,7 @@ services:
 
   keycloak:
       image: registry.asnw.inetum.com/keycloak-clave:15.0.2
-      container_name: keycloak
+      container_name: keycloak-1
       environment:
         - KEYCLOAK_USER=admin
         - KEYCLOAK_PASSWORD=pikathnoOoEezsSc0l8ZCfZs
