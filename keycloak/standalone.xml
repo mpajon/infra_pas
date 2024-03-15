@@ -429,7 +429,7 @@
                 <provider>
                     classpath:${jboss.home.dir}/providers/*
                 </provider>
-<provider>
+                <provider>
                     module:org.keycloak.samlClaveV2
                 </provider>
             </providers>
