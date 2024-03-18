@@ -179,8 +179,11 @@ services:
       image: registry.asnw.inetum.com/keycloak-clave:15.0.2
       container_name: keycloak
       environment:
+        - KC_PROXY=edge
+        - PROXY_ADDRESS_FORWARDING=true
         - KEYCLOAK_USER=${KEYCLOAK_USER}
         - KEYCLOAK_PASSWORD=${KEYCLOAK_PASS}
+        - KC_HOSTNAME=${KEYCLOAK_HOSTNAME}
       ports:
         - ${KEYCLOAK_PORT}:8080
       extra_hosts:
