@@ -3,18 +3,24 @@ version: '2.3'
 services:
 
   keycloak:
-      image: registry.asnw.inetum.com/keycloak-clave:15.0.2
-      container_name: keycloak-1
+      image: prueba-keycloak-clave:15.0.2
+      container_name: keycloak
       environment:
         - KEYCLOAK_USER=admin
         - KEYCLOAK_PASSWORD=pikathnoOoEezsSc0l8ZCfZs
+        - KC_HOSTNAME=keycloak.local.inetum.com
+        - KC_HTTPS_CERTIFICATE_FILE=/etc/x509/https/tls.crt
+        - KC_HTTPS_CERTIFICATE_KEY_FILE=/etc/x509/https/tls.key
       ports:
         - "18080:8080"
+        - "18443:8443"
       extra_hosts:
         - ldapeducainteg.princast.org:10.154.48.11        
         - ldapmetaint.princast.org:10.154.48.13
         - intgiddj.sespa.es:10.154.212.6
       volumes:
+        - ${DOCKER_PATH}/keycloak/certs/fullchain.pem:/etc/x509/https/tls.crt
+        - ${DOCKER_PATH}/keycloak/certs/privkey.pem:/etc/x509/https/tls.key
         - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
         - ${DOCKER_PATH}/keycloak/standalone-ha.xml:/opt/jboss/keycloak/standalone/configuration/standalone-ha.xml
         - ${DOCKER_PATH}/keycloak/cacerts:/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-3.el8_5.x86_64/lib/security/cacerts
