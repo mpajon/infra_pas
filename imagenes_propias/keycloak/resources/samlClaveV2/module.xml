@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<module xmlns="urn:jboss:module:1.1" name="org.keycloak.samlClaveV2">
+
+    <resources>
+        <resource-root path="keycloak-spi-clave.jar"/>
+        <resource-root path="clave-j20068.eidas-configmodule-2.7.jar"/>
+        <resource-root path="clave-j20068.saml-engine-2.7.jar"/>
+        <resource-root path="clave-j20068.commons-2.7.jar"/>
+        <resource-root path="clave-j20068.eidas-commons-2.7.jar"/>
+        <resource-root path="clave-j20068.eidas-encryption-2.7.jar"/>
+        <resource-root path="clave-j20068.eidas-light-commons-2.7.jar"/>
+        <resource-root path="xmltooling-1.4.5.jar"/>
+        <resource-root path="bcprov-jdk15on-1.60.jar"/>
+        <resource-root path="guava-19.0.jar"/>
+        <resource-root path="joda-time-2.6.jar"/>
+        <resource-root path="opensaml-2.6.5-eidas_1.jar"/>
+        <resource-root path="commons-collections-3.2.2.jar"/>
+        <resource-root path="commons-httpclient-3.1.jar"/>
+        <resource-root path="commons-lang-2.6.jar"/>
+        <resource-root path="xmlsec-2.0.5.jar"/>
+        <resource-root path="openws-1.5.5.jar"/>
+        <resource-root path="velocity-1.7-eidas_1.jar"/>
+        <resource-root path="esapi-2.1.0.jar"/>
+        <resource-root path="not-yet-commons-ssl-0.3.9.jar"/>
+        <resource-root path="icu4j-57.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.keycloak.keycloak-core"/>
+        <module name="org.keycloak.keycloak-common"/>
+        <module name="org.keycloak.keycloak-services"/>
+        <module name="org.keycloak.keycloak-server-spi"/>
+        <module name="org.keycloak.keycloak-server-spi-private"/>
+        <module name="org.keycloak.keycloak-saml-core"/>
+        <module name="org.keycloak.keycloak-saml-core-public"/>
+        <module name="org.jboss.logging"/>
+        <module name="javax.api"/>
+        <module name="javax.ws.rs.api"/>
+        <module name="org.slf4j"/>
+    </dependencies>
+</module>

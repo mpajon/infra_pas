@@ -1,0 +1,15 @@
+echo SETUP: Add samlClaveV2 module...
+module add --name=org.keycloak.samlClaveV2 --resource-delimiter=, \
+    --resources=/tmp/samlClaveV2/keycloak-spi-clave.jar,/tmp/samlClaveV2/libs/clave-j20068.eidas-configmodule-2.7.jar,/tmp/samlClaveV2/libs/clave-j20068.saml-engine-2.7.jar,/tmp/samlClaveV2/libs/clave-j20068.commons-2.7.jar,/tmp/samlClaveV2/libs/clave-j20068.eidas-commons-2.7.jar,/tmp/samlClaveV2/libs/clave-j20068.eidas-encryption-2.7.jar,/tmp/samlClaveV2/libs/clave-j20068.eidas-light-commons-2.7.jar,/tmp/samlClaveV2/libs/xmltooling-1.4.5.jar,/tmp/samlClaveV2/libs/bcprov-jdk15on-1.60.jar,/tmp/samlClaveV2/libs/guava-19.0.jar,/tmp/samlClaveV2/libs/joda-time-2.6.jar,/tmp/samlClaveV2/libs/opensaml-2.6.5-eidas_1.jar,/tmp/samlClaveV2/libs/commons-collections-3.2.2.jar,/tmp/samlClaveV2/libs/commons-httpclient-3.1.jar,/tmp/samlClaveV2/libs/commons-lang-2.6.jar,/tmp/samlClaveV2/libs/xmlsec-2.0.5.jar,/tmp/samlClaveV2/libs/openws-1.5.5.jar,/tmp/samlClaveV2/libs/velocity-1.7-eidas_1.jar,/tmp/samlClaveV2/libs/esapi-2.1.0.jar,/tmp/samlClaveV2/libs/not-yet-commons-ssl-0.3.9.jar,/tmp/samlClaveV2/libs/icu4j-57.1.jar \
+    --dependencies=org.keycloak.keycloak-core,org.keycloak.keycloak-common,org.keycloak.keycloak-services,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-server-spi-private,org.keycloak.keycloak-saml-core,org.keycloak.keycloak-saml-core-public,org.jboss.logging,javax.api,javax.ws.rs.api,org.slf4j
+
+echo SETUP: Add theme module...
+module add --name=org.keycloak.samlClave.theme --resources=/tmp/samlClaveV2/keycloak-spi-clave.jar
+
+echo SETUP: Register theme ...
+/subsystem=keycloak-server/theme=defaults/:list-add(name="modules",value="org.keycloak.samlClave.theme")
+
+echo SETUP: Register SPI ...
+/subsystem=keycloak-server:list-add(name="providers",value="module:org.keycloak.samlClaveV2")
+
+:shutdown(restart=true)
