@@ -28,6 +28,7 @@ services:
       - ${JENKINS_SLAVES_PORT}:50000
     extra_hosts:
       - svn.asturias.es:10.10.2.82
+      - git.princast.org:10.154.0.115
     environment:
       - JAVA_OPTS=-Xmx2048m -Xms2048m -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC -XX:+UnlockExperimentalVMOptions -Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=86400 -Dhudson.security.HudsonPrivateSecurityRealm.ID_REGEX=[a-zA-Z0-9_.@-]+
       - TZ=Europe/Madrid
