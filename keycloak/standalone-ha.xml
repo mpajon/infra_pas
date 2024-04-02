@@ -91,7 +91,13 @@
                 <formatter>
                     <named-formatter name="COLOR-PATTERN"/>
                 </formatter>
-            </console-handler>
+	    </console-handler>
+	    <logger category="eu.eidas">
+  	       <level name="ALL"/>
+                <handlers>
+                    <handler name="CONSOLE"/>
+                </handlers>	       		   
+   	    </logger>
             <logger category="com.arjuna">
                 <level name="WARN"/>
             </logger>
