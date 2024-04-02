@@ -24,3 +24,5 @@
 |           | Camilo Andrés	Moreno Colorado	    | camilo.moreno@inetum.com                  | x Developer            |
 |           | Sebastian	Marulanda Valencia	    | sebastian.marulanda@inetum.com            | x Developer            |
 |           | David Camilo	Aguja Chico	 	    | david.aguja@inetum.com                    | x Developer            |
+|           | Alejandro Alonso Alonso	        | alejandro.alonso-alonso@inetum.com        | x Developer            |
+|           | Silvia Fernandez	         	    | silvia.fernandez.ext@inetum.com           | x Developer            |

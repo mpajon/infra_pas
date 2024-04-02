@@ -53,14 +53,26 @@
 ## Crear usuario JENKINS en máquina
 
  - Crear un par clave privada/pública en la máquina
+
+   ssh-keygen -t ed25519 -C "marcos.pajon@inetum.com"
+
+
  - Gitlab: 
    - Crear usuario "jenkins" de tipo "desarrollador" y añadirle la clave pública generada y token de acceso.
    - Añadir el usurio jenkins al grupo AWSN
 
  - Jenkins: 
+   - Configure the host key verification strategy from "Manage Jenkins" >> "Security" >> "Git Host Key Verification Configuration". --> NO Verification  
    - Crear credencial de tipo "SSH username and private key" con el id Jenkins_ssh_agent y la clave privada generada.
    - Crear credencial de tipo "GitLab API token"
    - Crear credencial de tipo "GitLab Personal Access Token"
 
 ## Crear Proyecto en GITLAB
  - Crear el proyecto
+
+## Plugins Jenkins
+
+Config File Provider Plugin
+Pipeline Maven Integration
+Pipeline Maven Plugin API
+pipeline-utility-steps

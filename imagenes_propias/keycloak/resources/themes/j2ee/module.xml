@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<module xmlns="urn:jboss:module:1.1" name="org.keycloak.j2ee.theme">
+
+    <resources>
+        <resource-root path="keycloak-j2ee-theme.jar"/>
+    </resources>
+</module>
