@@ -76,3 +76,4 @@ Config File Provider Plugin
 Pipeline Maven Integration
 Pipeline Maven Plugin API
 pipeline-utility-steps
+http_request

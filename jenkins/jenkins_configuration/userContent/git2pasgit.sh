@@ -2,14 +2,13 @@
 
 PROJECT_NAME=$1
 VERSION=$2
-#COMMENT=$3
 
 # Load environment variables from .env file
- [ ! -f /var/jenkins_home/userContent/.merge.env ] || export $(grep -v '^#' /var/jenkins_home/userContent/.merge.env | xargs)
-#[ ! -f .merge.env ] || export $(grep -v '^#' .merge.env | xargs)
+[ ! -f /var/jenkins_home/userContent/.pas.env ] || export $(grep -v '^#' /var/jenkins_home/userContent/.pas.env | xargs)
+#[ ! -f .pas.env ] || export $(grep -v '^#' .pas.env | xargs)
 
-SOURCE_REPO_URL="${GIT_PROTOCOL_SOURCE}${GIT_USER_SOURCE}:${GIT_TOKEN_SOURCE}@${GIT_URL_SOURCE/@PROJECT_NAME@/${PROJECT_NAME}}"
-DESTINATION_REPO_URL="${GIT_PROTOCOL_DESTINATION}${GIT_USER_DESTINATION}:${GIT_TOKEN_DESTINATION}@${GIT_URL_DESTINATION/@PROJECT_NAME@/${PROJECT_NAME}}"
+SOURCE_REPO_URL="${GIT_PROTOCOL_SOURCE}${GIT_USER_SOURCE}:${GIT_TOKEN_SOURCE}@${GIT_URL_SOURCE}${PROJECT_NAME}"
+DESTINATION_REPO_URL="${GIT_PROTOCOL_DESTINATION}${GIT_USER_DESTINATION}:${GIT_TOKEN_DESTINATION}@${GIT_URL_DESTINATION}${PROJECT_NAME}"
 
 echo "SOURCE_REPO_URL ${SOURCE_REPO_URL}"
 echo "DESTINATION_REPO_URL ${DESTINATION_REPO_URL}"
@@ -21,6 +20,9 @@ rm -Rf destination_repo || exit 1
 # Clonar el repositorio destino si aún no existe
 if [ ! -d "destination_repo" ]; then
     echo "Cloning destination repository..."
+    git config --global core.autocrlf input
+    git config --global http.sslVerify false
+    git config --global http.proxy ""
     git clone "$DESTINATION_REPO_URL" destination_repo || exit 1
     cd destination_repo || exit 1
     git checkout desarrollo || exit 1
@@ -31,6 +33,7 @@ fi
 # Clonar el repositorio de origen si aún no existe
 if [ ! -d "source_repo" ]; then
     echo "Cloning source repository..."
+    git config --global core.autocrlf input
     git clone "$SOURCE_REPO_URL" source_repo || exit 1
     cd source_repo || exit 1
     git -c advice.detachedHead=false checkout tags/"$VERSION" || exit 1
@@ -43,15 +46,20 @@ fi
 # Crear merge-request
 echo "Creating merge request..."
 cd destination_repo || exit 1
+git config --global http.sslVerify false
+git config --global http.proxy ""
 git config --global user.email "marcos.pajon@inetum.com" || exit 1
 git config --global user.name "Marcos Pajón" || exit 1
-#git add . && git commit -m "$VERSION" || exit 1
-#git push || exit 1
-#git push --set-upstream origin desarrollo -o merge_request.create -o merge_request.target=integracion || exit 1
+# Para evitar el warning de CRLF will be replaced by LF
+git config --global core.safecrlf false
+git add .
+git status
+git add . && git commit -m "$VERSION" || exit 1
+git push || exit 1
 echo "Merge request create successfully"
 cd ..  || exit 1
 echo "----------------------------"
 
 # Borramos
-#rm -Rf source_repo || exit 1
-#rm -Rf destination_repo || exit 1
+rm -Rf source_repo || exit 1
+rm -Rf destination_repo || exit 1
