@@ -1,0 +1,46 @@
+logging.level.org.springframework.security: DEBUG
+application:
+  gitlab:
+    url: http://gitlab/api/v4
+    token: glpat-wQ3iHZuGBwAKvg_C6s4m
+    defaultPassword: Mandaloriano100
+  roles:
+    - id: 50
+      name: owner
+    - id: 40
+      name: maintainer
+    - id: 30
+      name: developer
+    - id: 20
+      name: reporter
+    - id: 10
+      name: guest
+  groups:
+    - id: 2
+      name: mandalore
+    - id: 3
+      name: pas
+    - id: 5
+      name: educacion
+    - id: 6
+      name: justicia
+    - id: 7
+      name: laboratorio
+    - id: 14
+      name: forms
+spring:
+  web:
+    cors:
+      allow-credentials: true
+      allowed-origins:
+        - "http://localhost:4200"
+      allowed-methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+      allowed-headers:
+        - Authorization
+        - Cache-Control
+        - Content-Type
+      max-age: 3600
