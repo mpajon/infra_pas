@@ -211,12 +211,11 @@ services:
         SPRING_PROFILES_ACTIVE: prod
       ports:
         - ${ONBOARDING_BACK_PORT}:8080
-
+  
   onboarding-front:
-      container_name: onboarding-front
-      image: registry.asnw.inetum.com/onboarding-front:1.0.0
-      volumes:
-        - ${DOCKER_PATH}/onboarding/front/config/onboarding-env.js:/usr/share/nginx/html/onboarding-env.js
-        - ${DOCKER_PATH}/onboarding/front/nginx/config/server.conf:/etc/nginx/conf.d/default.conf
-      ports:
-        - ${ONBOARDING_FRONT_PORT}:80
+    container_name: onboarding-front
+    image: registry.asnw.inetum.com/onboarding-front:1.0.1
+    volumes:
+      - ${DOCKER_PATH}/onboarding/front/config/onboarding-env.js:/usr/share/nginx/html/onboarding-env.js
+    ports:
+      - ${ONBOARDING_FRONT_PORT}:80
