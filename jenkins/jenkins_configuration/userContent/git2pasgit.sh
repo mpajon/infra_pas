@@ -37,9 +37,15 @@ if [ ! -d "source_repo" ]; then
     git clone "$SOURCE_REPO_URL" source_repo || exit 1
     cd source_repo || exit 1
     git -c advice.detachedHead=false checkout tags/"$VERSION" || exit 1
+    echo "----------------------------"
+fi
+
+# Usando rsync sincronizamos las carpetas
+if [ ! -d "source_repo" ]; then
+    echo "Rsync..."
     rm -Rf .git || exit 1
-    cp -R * ../destination_repo  || exit 1
     cd .. || exit 1
+    rsync -av --delete --exclude='.git' source_repo/ destination_repo  || exit 1
     echo "----------------------------"
 fi
 
