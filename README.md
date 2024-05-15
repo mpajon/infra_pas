@@ -56,7 +56,7 @@ Instalar rsync en la imagen para poder usar el script git2pasgit.sh
 
     $ apt update
 
-    $ apt-get install bzip2
+    $ apt-get install rsync
 
 # Sonar
 
