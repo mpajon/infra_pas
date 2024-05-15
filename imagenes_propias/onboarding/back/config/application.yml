@@ -27,7 +27,8 @@ application:
       - '*'      
   jenkins:
     url: http://jenkins:8080
-    token: 11bb20a790e6e0566b643373a30eb58ecb
+    admin_user: marcos.pajon
+    token: 110480951de3d63db47924d7d8aeb100b9
     defaultPassword: Mandaloriano100
     roles:
       - admin
