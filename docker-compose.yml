@@ -14,7 +14,7 @@ services:
       - ${PORTAINER_PORT}:9000
 
   jenkins:
-    image: jenkins/jenkins:lts
+    image: registry.asnw.inetum.com/jenkins-inetum:2.426.3
     container_name: jenkins
     restart: unless-stopped
     labels:
