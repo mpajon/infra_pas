@@ -63,3 +63,9 @@ Instalar rsync en la imagen para poder usar el script git2pasgit.sh
 Ejecutar en el host:
 
     $ sudo sysctl -w vm.max_map_count=262144
+
+# Gitlab
+
+Para poder usar los webhooks entre Jenkins y Gitlab
+
+Admin → Settings → Network → Outbound Requests → Allow requests to the local network from hooks and services

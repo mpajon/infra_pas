@@ -58,6 +58,8 @@ git config --global user.email "marcos.pajon@inetum.com" || exit 1
 git config --global user.name "Marcos Pajón" || exit 1
 # Para evitar el warning de CRLF will be replaced by LF
 git config --global core.safecrlf false
+# Para prevenir el 100644 → 100755 commits
+git config --global core.filemode false
 git add .
 git status
 git add . && git commit -m "$VERSION" || exit 1
