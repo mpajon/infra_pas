@@ -192,6 +192,7 @@ services:
       extra_hosts:
         - ldapeducainteg.princast.org:10.154.48.11        
         - ldapmetaint.princast.org:10.154.48.13
+        - ldapmetainteg.princast.org:10.154.48.2
         - intgiddj.sespa.es:10.154.212.6
       volumes:
         - /etc/localtime:/etc/localtime:ro
