@@ -46,6 +46,8 @@ if [ ! -d "source_repo" ]; then
     rm -Rf .git || exit 1
     cd .. || exit 1
     rsync -av --delete --exclude='.git' source_repo/ destination_repo  || exit 1
+    # Para asegurarnos que se copian todos los ficheros de un repo a otro
+    diff -r --exclude='.git' source_repo destination_repo || exit 1
     echo "----------------------------"
 fi
 
