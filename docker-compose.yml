@@ -206,11 +206,17 @@ services:
     container_name: uptime-kuma
     image: louislam/uptime-kuma:1
     restart: always
+    environment:
+      - http_proxy=
+      - https_proxy=
+      - no_proxy=
+      - HTTP_PROXY=
+      - HTTPS_PROXY=
+      - NO_PROXY=          
     volumes:
       - ${DOCKER_PATH}/uptime-kuma/data:/app/data
     ports:
       - ${UPTIME_KUMA_PORT}:3001
-
 
   onboarding-back:
       container_name: onboarding-back
