@@ -10,6 +10,8 @@ Probar la configuración
 
     $ sudo systemctl restart haproxy
 
+    $ sudo systemctl status haproxy
+
 Log
 
     /etc/rsyslog.conf
