@@ -58,6 +58,12 @@ Instalar rsync en la imagen para poder usar el script git2pasgit.sh
 
     $ apt-get install rsync
 
+Para evitar problemas del tipo "fatal: not in a git directory" cuando se clona un proyecto desde un pipeline, ejecutar:
+
+    $ git config --global --add safe.directory '*'
+
+desde el directorio _/var/jenkins_home_
+
 # Sonar
 
 Ejecutar en el host:
