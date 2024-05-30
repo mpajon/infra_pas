@@ -30,7 +30,7 @@
     <!--  If not present then no decryption will be applied on response -->
 	<!-- Certificado nuevo -->
 	<entry key="responseDecryptionIssuer">CN=AC Firmaprofesional - CUALIFICADOS,SERIALNUMBER=A62634068,OU=Certificados Cualificados,O=Firmaprofesional S.A.,C=ES</entry>
-    <entry key="serialNumber">128796805564376761A4DD90505FEBB5</entry>
+    <entry key="serialNumber">1FCE1244FE7B3190E62C511BE7F1123D</entry>
 	
 	<!-- Certificado viejo -->
 	<!--<entry key="responseDecryptionIssuer">CN=AC Firmaprofesional - AAPP,SERIALNUMBER=A62634068,OU=Certificados Digitales para la Administracion Publica,O=Firmaprofesional SA,C=ES</entry>
