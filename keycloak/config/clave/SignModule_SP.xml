@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<comment>SWModule sign with JKS.</comment>
+	<!-- Certificates -->
+	<entry key="check_certificate_validity_period">false</entry>
+	<entry key="disallow_self_signed_certificate">false</entry>
+
+	<!-- signing Algorithm SHA_512(default),SHA_384,SHA_256 -->
+	<!-- http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+	<!-- http://www.w3.org/2001/04/xmldsig-more#rsa-sha384 -->
+	<!-- http://www.w3.org/2001/04/xmldsig-more#rsa-sha512 -->
+
+	<entry key="signature.algorithm">http://www.w3.org/2001/04/xmldsig-more#rsa-sha512</entry>
+
+	<!-- List of incoming Signature algorithms white list separated by ; (default all)
+         http://www.w3.org/2001/04/xmldsig-more#rsa-sha256;
+         http://www.w3.org/2001/04/xmldsig-more#rsa-sha384;
+         http://www.w3.org/2001/04/xmldsig-more#rsa-sha512;
+         http://www.w3.org/2001/04/xmldsig-more#rsa-ripemd160;
+         http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256;
+         http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384;
+         http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512 -->
+
+	<entry key="signature.algorithm.whitelist">
+		http://www.w3.org/2001/04/xmldsig-more#rsa-sha256;
+		http://www.w3.org/2001/04/xmldsig-more#rsa-sha384;
+		http://www.w3.org/2001/04/xmldsig-more#rsa-sha512;
+		http://www.w3.org/2001/04/xmldsig-more#rsa-ripemd160;
+		http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256;
+		http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384;
+		http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512;
+		http://www.w3.org/2007/05/xmldsig-more#sha256-rsa-MGF1
+	</entry>
+	<!-- signing response assertion true/false (default false) -->
+	<entry key="response.sign.assertions">false</entry>
+	<entry key="keyStorePath">./Certificados24.jks</entry>
+	<entry key="keyStorePassword">changeit</entry>
+	<!-- Certificado nuevo -->
+	<entry key="keyPassword">eeSSStppeSa</entry>
+	<entry key="issuer">CN=AC Firmaprofesional - CUALIFICADOS,SERIALNUMBER=A62634068,OU=Certificados Cualificados,O=Firmaprofesional S.A.,C=ES</entry>
+	<entry key="serialNumber">128796805564376761A4DD90505FEBB5</entry>
+	<!-- Certificado viejo -->
+	<!--<entry key="keyPassword">changeit</entry>
+	<entry key="issuer">CN=AC Firmaprofesional - AAPP,SERIALNUMBER=A62634068,OU=Certificados Digitales para la Administracion Publica,O=Firmaprofesional SA,C=ES</entry>
+	<entry key="serialNumber">32054C15B186F220</entry>-->
+	<entry key="keyStoreType">JKS</entry>
+</properties>
