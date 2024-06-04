@@ -1,0 +1,38 @@
+version: 1
+
+#The user OU
+
+dn: ou=Users,dc=inetum,dc=com
+changetype: add
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+#The users
+dn: uid=e000000004a,ou=Users,dc=inetum,dc=com
+changetype: add
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+cn: E000000004A
+sn: E000000004A
+uid: E000000004A
+userPassword: temporal
+mail: E000000004A@prueba.com
+
+#The roles OU
+
+dn: ou=Roles,dc=inetum,dc=com
+changetype: add
+objectclass: top
+objectclass: organizationalUnit
+ou: Roles
+
+#The roles
+
+dn: cn=GESTOR_TRIBUNALES,ou=Roles,dc=inetum,dc=com
+changetype: add
+objectClass: top
+objectClass: groupOfNames
+cn: GESTOR_TRIBUNALES
+member: uid=e000000004a,ou=Users,dc=inetum,dc=com

@@ -201,6 +201,26 @@ services:
         - ${DOCKER_PATH}/keycloak/standalone-ha.xml:/opt/jboss/keycloak/standalone/configuration/standalone-ha.xml
         - ${DOCKER_PATH}/keycloak/cacerts:/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-3.el8_5.x86_64/lib/security/cacerts
         - ${DOCKER_PATH}/keycloak/config:/opt/jboss/config/
+
+  openldap:
+    image: osixia/openldap:1.5.0      
+    container_name: openldap
+    command: [--copy-service]
+    volumes:
+      - ${DOCKER_PATH}/ldap/database:/var/lib/ldap
+      - ${DOCKER_PATH}/ldap/config:/etc/ldap/slapd.d
+      - ${DOCKER_PATH}/ldap/bootstrap:/container/service/slapd/assets/config/bootstrap/ldif/custom
+    environment:
+      - LDAP_ORGANISATION=${LDAP_ORGANISATION}
+      - LDAP_DOMAIN=${LDAP_DOMAIN}
+      - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD}
+      - LDAP_CONFIG_PASSWORD=config
+      - LDAP_RFC2307BIS_SCHEMA=true
+      - LDAP_REMOVE_CONFIG_AFTER_SETUP=true
+      - LDAP_TLS_VERIFY_CLIENT=never
+    ports:
+      - ${LDAP_PORT}:389
+      - ${LDAP_SECURE_PORT}:636
   
   uptime-kuma:
     container_name: uptime-kuma
