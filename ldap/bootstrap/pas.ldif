@@ -1,38 +1,82 @@
 version: 1
 
-#The user OU
+##############
+# EMP
+##############
 
-dn: ou=Users,dc=inetum,dc=com
+dn: ou=EMP,dc=inetum,dc=com
 changetype: add
 objectClass: organizationalUnit
 objectClass: top
-ou: Users
+ou: EMP
 
-#The users
-dn: uid=e000000004a,ou=Users,dc=inetum,dc=com
-changetype: add
-objectClass: top
-objectClass: person
-objectClass: inetOrgPerson
-cn: E000000004A
-sn: E000000004A
-uid: E000000004A
-userPassword: temporal
-mail: E000000004A@prueba.com
+##############
+# APPS
+##############
 
-#The roles OU
-
-dn: ou=Roles,dc=inetum,dc=com
+dn: ou=APPS,dc=inetum,dc=com
 changetype: add
 objectclass: top
 objectclass: organizationalUnit
-ou: Roles
+ou: APPS
 
-#The roles
+################
+# APP SAMPLEAPP
+################
 
-dn: cn=GESTOR_TRIBUNALES,ou=Roles,dc=inetum,dc=com
+dn: ou=sampleapp,ou=APPS,dc=inetum,dc=com
+changetype: add
+objectclass: top
+objectclass: organizationalUnit
+ou: sampleapp
+
+##############
+# ROLES
+##############
+
+dn: cn=AMD,ou=sampleapp,ou=APPS,dc=inetum,dc=com
+changetype: add
+objectClass: top
+objectClass: groupOfNames
+cn: ADM
+member: uid=e000000004a,ou=EMP,dc=inetum,dc=com
+
+dn: cn=COLABORADOR,ou=sampleapp,ou=APPS,dc=inetum,dc=com
+changetype: add
+objectClass: top
+objectClass: groupOfNames
+cn: COLABORADOR
+member: uid=e000000001a,ou=EMP,dc=inetum,dc=com
+
+dn: cn=GESTOR_TRIBUNALES,ou=sampleapp,ou=APPS,dc=inetum,dc=com
 changetype: add
 objectClass: top
 objectClass: groupOfNames
 cn: GESTOR_TRIBUNALES
-member: uid=e000000004a,ou=Users,dc=inetum,dc=com
+member: uid=e000000001a,ou=EMP,dc=inetum,dc=com
+member: uid=e000000004a,ou=EMP,dc=inetum,dc=com
+
+##############
+# USERS
+##############
+dn: uid=e000000004a,ou=EMP,dc=inetum,dc=com
+changetype: add
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+cn: Nombre
+sn: Apellido
+uid: E000000004A
+userPassword: temporal
+mail: E000000004A@prueba.com
+
+dn: uid=e000000001a,ou=EMP,dc=inetum,dc=com
+changetype: add
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+cn: Prueba
+sn: Temporal
+uid: E000000001A
+userPassword: temporal
+mail: E000000001A@prueba.com
