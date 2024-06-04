@@ -259,7 +259,7 @@ services:
 
   portal-front:
       container_name: portal-front
-      image: registry.asnw.inetum.com/portal-asnw:0.0.1
+      image: registry.asnw.inetum.com/portal-asnw:0.0.4
       volumes:
         - ${DOCKER_PATH}/portal/front/config/asnw-inetum-env.js:/usr/share/nginx/html/asnw-inetum-env.js
       ports:
