@@ -1,20 +1,37 @@
 logging.level.org.springframework.security: DEBUG
+
 application:
+
   gitlab:
     url: http://gitlab/api/v4
     token: glpat-wQ3iHZuGBwAKvg_C6s4m
     defaultPassword: Mandaloriano100
-  roles:
-    - id: 50
-      name: owner
-    - id: 40
-      name: maintainer
-    - id: 30
-      name: developer
-    - id: 20
-      name: reporter
-    - id: 10
-      name: guest
+    roles:
+      - id: 50
+        name: owner
+      - id: 40
+        name: maintainer
+      - id: 30
+        name: developer
+      - id: 20
+        name: reporter
+      - id: 10
+        name: guest
+    
+  jenkins:
+    url: http://jenkins:8080
+    admin_user: marcos.pajon
+    token: 110480951de3d63db47924d7d8aeb100b9
+    defaultPassword: Mandaloriano100
+    roles:
+      - admin
+      - user
+
+  sonarqube:
+    url: http://sonarqube:9000/api
+    token: 04e759c57af883b7d8dc0f52b257107a4e397fe3
+    defaultPassword: Mandaloriano100      
+
   cors:
     allowed-origins:
       - '*'
@@ -25,11 +42,3 @@ application:
       - DELETE
     allowedHeaders:
       - '*'      
-  jenkins:
-    url: http://jenkins:8080
-    admin_user: marcos.pajon
-    token: 110480951de3d63db47924d7d8aeb100b9
-    defaultPassword: Mandaloriano100
-    roles:
-      - admin
-      - user
