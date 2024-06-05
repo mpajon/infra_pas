@@ -34,7 +34,7 @@ ou: sampleapp
 # ROLES
 ##############
 
-dn: cn=AMD,ou=sampleapp,ou=APPS,dc=inetum,dc=com
+dn: cn=ADM,ou=sampleapp,ou=APPS,dc=inetum,dc=com
 changetype: add
 objectClass: top
 objectClass: groupOfNames
