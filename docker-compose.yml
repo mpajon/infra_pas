@@ -240,7 +240,7 @@ services:
 
   onboarding-back:
       container_name: onboarding-back
-      image: registry.asnw.inetum.com/onboarding-back:1.0.5
+      image: registry.asnw.inetum.com/onboarding-back:1.0.6
       volumes:
         - ${DOCKER_PATH}/onboarding/back/config:/onboarding-back/config
       environment:
@@ -251,7 +251,7 @@ services:
   
   onboarding-front:
       container_name: onboarding-front
-      image: registry.asnw.inetum.com/onboarding-front:1.0.3
+      image: registry.asnw.inetum.com/onboarding-front:1.0.4
       volumes:
         - ${DOCKER_PATH}/onboarding/front/config/onboarding-env.js:/usr/share/nginx/html/onboarding-env.js
       ports:

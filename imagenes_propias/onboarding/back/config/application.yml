@@ -42,3 +42,26 @@ application:
       - DELETE
     allowedHeaders:
       - '*'      
+
+keycloak:
+  realm: onboarding
+  resource: onboarding
+  auth-server-url: https://keycloak.asnw.inetum.com/auth
+  ssl-required: external
+  public-client: true
+  bearer-only: true
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: https://keycloak.asnw.inetum.com/realms/onboarding
+        registration:
+          keycloak:
+            client-id: onboarding
+            client-authentication-method: none
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            scope: openid, profile, email
