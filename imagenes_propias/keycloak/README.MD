@@ -1,11 +1,11 @@
 ## Para crear la imagen
-docker build -t registry.asnw.inetum.com/keycloak-clave:15.0.2.1 .
+docker build -t registry.asnw.inetum.com/keycloak-clave:15.0.2.2 .
 
 ## Para subir la imagen
-docker push registry.asnw.inetum.com/keycloak-clave:15.0.2.1
+docker push registry.asnw.inetum.com/keycloak-clave:15.0.2.2
 
 ## Para correr la imagen
-docker run --name prueba registry.asnw.inetum.com/keycloak-clave:15.0.2.1
+docker run --name prueba registry.asnw.inetum.com/keycloak-clave:15.0.2.2
 
 
 

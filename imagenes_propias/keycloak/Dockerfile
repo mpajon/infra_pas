@@ -21,6 +21,11 @@ RUN mkdir -p /opt/jboss/keycloak/modules/org/keycloak/educacion/theme/main
 ADD ./resources/themes/educacion/keycloak-educacion-theme.jar /opt/jboss/keycloak/modules/org/keycloak/educacion/theme/main 
 COPY ./resources/themes/educacion/module.xml /opt/jboss/keycloak/modules/org/keycloak/educacion/theme/main
 
+# ONBOARDING THEME
+RUN mkdir -p /opt/jboss/keycloak/modules/org/keycloak/onboarding/theme/main
+ADD ./resources/themes/onboarding/keycloak-onboarding-theme.jar /opt/jboss/keycloak/modules/org/keycloak/onboarding/theme/main 
+COPY ./resources/themes/onboarding/module.xml /opt/jboss/keycloak/modules/org/keycloak/onboarding/theme/main
+
 EXPOSE 8080
 EXPOSE 8443
 ENTRYPOINT ["/opt/jboss/tools/docker-entrypoint.sh", "-b", "0.0.0.0"]

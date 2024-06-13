@@ -515,7 +515,10 @@
                     </module>
                     <module>
                         org.keycloak.educacion.theme
-                    </module>                    
+                    </module>  
+                    <module>
+                        org.keycloak.onboarding.theme
+                    </module>                                        
                 </modules>
             </theme>                      
             <spi name="eventsStore">

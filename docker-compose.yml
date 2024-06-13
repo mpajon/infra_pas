@@ -178,7 +178,7 @@ services:
     - IMAP_STARTTLS=false
 
   keycloak:
-      image: registry.asnw.inetum.com/keycloak-clave:15.0.2.1
+      image: registry.asnw.inetum.com/keycloak-clave:15.0.2.2
       container_name: keycloak
       environment:
         - KC_PROXY=edge
@@ -251,7 +251,7 @@ services:
   
   onboarding-front:
       container_name: onboarding-front
-      image: registry.asnw.inetum.com/onboarding-front:1.0.4
+      image: registry.asnw.inetum.com/onboarding-front:1.0.5
       volumes:
         - ${DOCKER_PATH}/onboarding/front/config/onboarding-env.js:/usr/share/nginx/html/onboarding-env.js
       ports:
