@@ -12,9 +12,7 @@ services:
       - "${DOCKER_PATH}/portainer/portainer-data:/data"
     ports:
       - ${PORTAINER_PORT}:9000
-    profiles:
-      - uso      
-
+      
   jenkins:
     image: registry.asnw.inetum.com/jenkins-inetum:2.426.3
     container_name: jenkins
@@ -34,9 +32,7 @@ services:
       - gitlab.princast.org:172.29.128.242
     environment:
       - JAVA_OPTS=-Xmx2048m -Xms2048m -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC -XX:+UnlockExperimentalVMOptions -Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=86400 -Dhudson.security.HudsonPrivateSecurityRealm.ID_REGEX=[a-zA-Z0-9_.@-]+
-      - TZ=Europe/Madrid
-    profiles:
-      - no_uso          
+      - TZ=Europe/Madrid       
 
   nexus:
     image: sonatype/nexus3
@@ -50,9 +46,7 @@ services:
     - INSTALL4J_ADD_VM_PARAMS=-Xms1200m -Xmx1200m -XX:MaxDirectMemorySize=2g -Djava.util.prefs.userRoot=/nexus-data/javapref
     ports:
       - ${NEXUS3_PORT}:8081
-      - 18000:18000
-    profiles:
-      - no_uso                    
+      - 18000:18000                  
       
 
   sonarqube-postgresql:
@@ -68,9 +62,7 @@ services:
       - ${DOCKER_PATH}/sonarqube/sonarqube-postgresql:/var/lib/postgresql
       - ${DOCKER_PATH}/sonarqube/sonarqube-postgresql-data:/var/lib/postgresql/data
     ports:
-      - ${DB_SONARQUBE_POSTGRES_PORT}:5432
-    profiles:
-      - no_uso          
+      - ${DB_SONARQUBE_POSTGRES_PORT}:5432       
 
   sonarqube:
     image: sonarqube:8.9.2-community
@@ -88,9 +80,7 @@ services:
       - ${DOCKER_PATH}/sonarqube/sonarqube_extensions:/opt/sonarqube/extensions
       - ${DOCKER_PATH}/sonarqube/sonarqube_logs:/opt/sonarqube/logs
     ports:
-      - ${SONARQUBE_PORT}:9000
-    profiles:
-      - no_uso          
+      - ${SONARQUBE_PORT}:9000       
 
   gitlab-redis:
     image: redis:6.2.6
@@ -99,9 +89,7 @@ services:
     command:
     - --loglevel warning
     volumes:
-    - "${DOCKER_PATH}/gitlab/redis-data:/data:Z"
-    profiles:
-      - no_uso        
+    - "${DOCKER_PATH}/gitlab/redis-data:/data:Z"      
 
   gitlab-postgresql:
     image: sameersbn/postgresql:14-20230628
@@ -113,9 +101,7 @@ services:
     - DB_USER=${DB_USER}
     - DB_PASS=${DB_PASS}
     - DB_NAME=${DB_NAME}
-    - DB_EXTENSION=pg_trgm,btree_gist
-    profiles:
-      - no_uso               
+    - DB_EXTENSION=pg_trgm,btree_gist             
 
   gitlab:
     image: sameersbn/gitlab:16.8.1
@@ -190,9 +176,7 @@ services:
     - IMAP_USER=mailer@example.com
     - IMAP_PASS=password
     - IMAP_SSL=true
-    - IMAP_STARTTLS=false
-    profiles:
-      - no_uso               
+    - IMAP_STARTTLS=false         
 
   keycloak:
       image: registry.asnw.inetum.com/keycloak-clave:15.0.2.3
@@ -218,9 +202,7 @@ services:
         - ${DOCKER_PATH}/keycloak/data:/opt/jboss/keycloak/standalone/data/
         - ${DOCKER_PATH}/keycloak/standalone-ha.xml:/opt/jboss/keycloak/standalone/configuration/standalone-ha.xml
         - ${DOCKER_PATH}/keycloak/cacerts:/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-3.el8_5.x86_64/lib/security/cacerts
-        - ${DOCKER_PATH}/keycloak/config:/opt/jboss/config/
-      profiles:
-        - no_uso                   
+        - ${DOCKER_PATH}/keycloak/config:/opt/jboss/config/               
 
   openldap:
     image: osixia/openldap:1.5.0      
@@ -241,9 +223,7 @@ services:
       - LDAP_TLS_VERIFY_CLIENT=never
     ports:
       - ${LDAP_PORT}:389
-      - ${LDAP_SECURE_PORT}:636
-    profiles:
-      - no_uso                    
+      - ${LDAP_SECURE_PORT}:636                  
   
   uptime-kuma:
     container_name: uptime-kuma
@@ -260,20 +240,6 @@ services:
       - ${DOCKER_PATH}/uptime-kuma/data:/app/data
     ports:
       - ${UPTIME_KUMA_PORT}:3001
-    profiles:
-      - uso      
-
-  notification-service:
-    image: registry.asnw.inetum.com/notification-server:0.0.1
-    container_name: notification-service
-    restart: unless-stopped    
-    ports:
-      - ${NOTIFICATION_SERVER_PORT}:5342
-    environment:
-      - HTTP_PROXY=${HTTP_PROXY}
-      - HTTPS_PROXY==${HTTPS_PROXY}
-    profiles:
-      - uso      
 
   notification-service:
     image: registry.asnw.inetum.com/notification-server:0.0.1
@@ -295,9 +261,7 @@ services:
         SPRING_CONFIG_LOCATION: classpath:/,file:/onboarding-back/config/
         SPRING_PROFILES_ACTIVE: prod
       ports:
-        - ${ONBOARDING_BACK_PORT}:8080
-      profiles:
-        - no_uso                      
+        - ${ONBOARDING_BACK_PORT}:8080 
   
   onboarding-front:
       container_name: onboarding-front
@@ -306,9 +270,7 @@ services:
       volumes:
         - ${DOCKER_PATH}/onboarding/front/config/onboarding-env.js:/usr/share/nginx/html/onboarding-env.js
       ports:
-        - ${ONBOARDING_FRONT_PORT}:80
-      profiles:
-        - no_uso                      
+        - ${ONBOARDING_FRONT_PORT}:80    
 
   portal-front:
       container_name: portal-front
@@ -317,10 +279,4 @@ services:
       volumes:
         - ${DOCKER_PATH}/portal/front/config/asnw-inetum-env.js:/usr/share/nginx/html/asnw-inetum-env.js
       ports:
-<<<<<<< HEAD
         - ${PORTAL_FRONT_PORT}:80        
-=======
-        - ${PORTAL_FRONT_PORT}:80  
-      profiles:
-        - no_uso              
->>>>>>> 89ea9041dce8b3ba542116b84d5d4a243644d6ee
