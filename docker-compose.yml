@@ -12,6 +12,8 @@ services:
       - "${DOCKER_PATH}/portainer/portainer-data:/data"
     ports:
       - ${PORTAINER_PORT}:9000
+    profiles:
+      - uso      
 
   jenkins:
     image: registry.asnw.inetum.com/jenkins-inetum:2.426.3
@@ -52,7 +54,7 @@ services:
     image: postgres:12
     hostname: sonarqube-postgresql
     container_name: sonarqube-postgresql
-    restart: always
+    restart: unless-stopped
     environment:
       POSTGRES_USER: ${DB_SONARQUBE_POSTGRES_USER}
       POSTGRES_PASSWORD: ${DB_SONARQUBE_POSTGRES_PASSWORD}
@@ -84,7 +86,7 @@ services:
   gitlab-redis:
     image: redis:6.2.6
     container_name: gitlab-redis
-    restart: always
+    restart: unless-stopped
     command:
     - --loglevel warning
     volumes:
@@ -93,7 +95,7 @@ services:
   gitlab-postgresql:
     image: sameersbn/postgresql:14-20230628
     container_name: gitlab-postgresql
-    restart: always
+    restart: unless-stopped
     volumes:
     - "${DOCKER_PATH}/gitlab/gitlab-postgresql:/var/lib/postgresql:Z"
     environment:
@@ -105,7 +107,7 @@ services:
   gitlab:
     image: sameersbn/gitlab:16.8.1
     container_name: gitlab
-    restart: always
+    restart: unless-stopped
     depends_on:
     - gitlab-redis
     - gitlab-postgresql
@@ -180,6 +182,7 @@ services:
   keycloak:
       image: registry.asnw.inetum.com/keycloak-clave:15.0.2.3
       container_name: keycloak
+      restart: unless-stopped      
       environment:
         - KC_PROXY=edge
         - PROXY_ADDRESS_FORWARDING=true
@@ -205,6 +208,7 @@ services:
   openldap:
     image: osixia/openldap:1.5.0      
     container_name: openldap
+    restart: unless-stopped    
     command: [--copy-service]
     volumes:
       - ${DOCKER_PATH}/ldap/database:/var/lib/ldap
@@ -225,7 +229,7 @@ services:
   uptime-kuma:
     container_name: uptime-kuma
     image: louislam/uptime-kuma:1
-    restart: always
+    restart: unless-stopped
     environment:
       - http_proxy=
       - https_proxy=
@@ -237,10 +241,25 @@ services:
       - ${DOCKER_PATH}/uptime-kuma/data:/app/data
     ports:
       - ${UPTIME_KUMA_PORT}:3001
+    profiles:
+      - uso      
+
+  notification-service:
+    image: registry.asnw.inetum.com/notification-server:0.0.1
+    container_name: notification-service
+    restart: unless-stopped    
+    ports:
+      - ${NOTIFICATION_SERVER_PORT}:5342
+    environment:
+      - HTTP_PROXY=${HTTP_PROXY}
+      - HTTPS_PROXY==${HTTPS_PROXY}
+    profiles:
+      - uso      
 
   onboarding-back:
       container_name: onboarding-back
       image: registry.asnw.inetum.com/onboarding-back:1.0.7
+      restart: unless-stopped      
       volumes:
         - ${DOCKER_PATH}/onboarding/back/config:/onboarding-back/config
       environment:
@@ -252,6 +271,7 @@ services:
   onboarding-front:
       container_name: onboarding-front
       image: registry.asnw.inetum.com/onboarding-front:1.0.5
+      restart: unless-stopped      
       volumes:
         - ${DOCKER_PATH}/onboarding/front/config/onboarding-env.js:/usr/share/nginx/html/onboarding-env.js
       ports:
@@ -259,6 +279,7 @@ services:
 
   portal-front:
       container_name: portal-front
+      restart: unless-stopped      
       image: registry.asnw.inetum.com/portal-asnw:0.0.4
       volumes:
         - ${DOCKER_PATH}/portal/front/config/asnw-inetum-env.js:/usr/share/nginx/html/asnw-inetum-env.js
