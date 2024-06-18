@@ -24,7 +24,10 @@ def handle_post():
         url = "https://prod-211.westeurope.logic.azure.com:443/workflows/b167dbee4c5b446580aec8dbecfb3140/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=FxgJs3373YCmGl8o1hQkYfjwXrYQ4tmwrKpQBOJvs5k"
         payload = {}
         headers = {}
-        response = requests.request("POST", url, headers=headers, data=payload, proxies=proxy)
+        if proxy.get("http") and len(proxy["http"]) > 0:
+            response = requests.request("POST", url, headers=headers, data=payload, proxies=proxy)
+        else:
+            response = requests.request("POST", url, headers=headers, data=payload)        
         # Retorna una respuesta de ejemplo
         response_data = {"mensaje": "Solicitud POST recibida correctamente"}
         return jsonify(response_data), 200

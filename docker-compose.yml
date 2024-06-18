@@ -51,6 +51,8 @@ services:
     ports:
       - ${NEXUS3_PORT}:8081
       - 18000:18000
+    profiles:
+      - no_uso                    
       
 
   sonarqube-postgresql:
