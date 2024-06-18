@@ -178,7 +178,7 @@ services:
     - IMAP_STARTTLS=false
 
   keycloak:
-      image: registry.asnw.inetum.com/keycloak-clave:15.0.2.2
+      image: registry.asnw.inetum.com/keycloak-clave:15.0.2.3
       container_name: keycloak
       environment:
         - KC_PROXY=edge
@@ -237,6 +237,16 @@ services:
       - ${DOCKER_PATH}/uptime-kuma/data:/app/data
     ports:
       - ${UPTIME_KUMA_PORT}:3001
+
+  notification-service:
+    image: registry.asnw.inetum.com/notification-server:0.0.1
+    container_name: notification-service
+    restart: unless-stopped    
+    ports:
+      - ${NOTIFICATION_SERVER_PORT}:5342
+    environment:
+      - HTTP_PROXY=${HTTP_PROXY}
+      - HTTPS_PROXY==${HTTPS_PROXY}
 
   onboarding-back:
       container_name: onboarding-back
