@@ -256,7 +256,7 @@ services:
 
   onboarding-back:
       container_name: onboarding-back
-      image: registry.asnw.inetum.com/onboarding-back:1.0.7
+      image: registry.asnw.inetum.com/onboarding-back:1.0.8
       restart: unless-stopped      
       volumes:
         - ${DOCKER_PATH}/onboarding/back/config:/onboarding-back/config
