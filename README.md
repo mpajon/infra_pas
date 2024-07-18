@@ -22,6 +22,20 @@ Crear los directorios en _$DOCKER_PATH_:
     
     $ sonarqube/sonarqube-postgresql
 
+## Proxy a nivel de demonio
+
+    Añadir en 
+    
+    $ /etc/systemd/system/docker.service.d/http-proxy.conf
+
+    Recargar
+
+    $ sudo systemctl daemon-reload
+
+    Reiniciar
+
+    $ sudo systemctl restart docker
+
 ## Arrancar en local
 
     $ docker-compose --env-file ./local.env up -d
@@ -63,6 +77,10 @@ Para evitar problemas del tipo "fatal: not in a git directory" cuando se clona u
     $ git config --global --add safe.directory '*'
 
 desde el directorio _/var/jenkins_home_
+
+Hay una variable COMP_PROXY definida a nivel de Jenkins Panel de Control --> Administrar Jenkins --> System que se puede usar desde los pipelines:
+
+    $ sh 'echo $COMP_PROXY
 
 # Sonar
 
