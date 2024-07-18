@@ -1,0 +1,5 @@
+proxy=http://172.16.255.100:3128/
+https-proxy=http://172.16.255.100:3128/
+unsafe-perm=true
+sonarHostUrl=http://sonarqube:9000
+sonarToken=9969bbcaa0b86d2ccd8e78d41bc22b5233dbb2e7

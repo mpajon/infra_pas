@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>	
+	
+  	<localRepository>/var/jenkins_home/.m2/inetum/repository/</localRepository>
+  
+	<mirrors>
+		<mirror>
+			<id>nexus</id>
+			<mirrorOf>*</mirrorOf>
+			<url>http://nexus:8081/repository/public</url>
+		</mirror>		
+	</mirrors>
+	
+	<servers>
+
+		<server>  
+			<id>inhouse.releases</id>
+			<username>mantenimiento</username>
+			<password>mantenimiento</password>
+		</server>
+ 
+		<server>  
+			<id>inhouse.snapshots</id>
+			<username>mantenimiento</username>
+			<password>mantenimiento</password>
+		</server> 
+
+	</servers>
+	
+
+
+	<profiles>
+		<profile>
+			<id>nexus</id>
+			<properties>
+  				<jboss-as.username>jbadmin</jboss-as.username>
+                <jboss-as.password>Password1$</jboss-as.password>				
+				<wildfly.protocol>remoting</wildfly.protocol>
+				<wildfly.port>9999</wildfly.port>
+				<wildfly.username>${jboss-as.username}</wildfly.username>
+				<wildfly.password>${jboss-as.password}</wildfly.password>
+                <sonar.login>9969bbcaa0b86d2ccd8e78d41bc22b5233dbb2e7</sonar.login>             
+				<maven.artifact.threads>10</maven.artifact.threads>
+                <maven.test.skip>true</maven.test.skip>
+			</properties>
+		</profile>							
+	</profiles>
+	<activeProfiles>
+		<activeProfile>nexus</activeProfile>
+	</activeProfiles>
+</settings>
