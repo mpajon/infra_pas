@@ -12,7 +12,7 @@ DESTINATION_GITLAB_TOKEN="glpat-jw4XUGWX9afkRviiXTmU"
 DESTINATION_GROUP_PATH="ol-tech-advanced-applications-northwest/principado-de-asturias"
 
 # Parámetro para el número de proyectos por página
-PER_PAGE=${1:-5}  # Valor por defecto es 5 si no se pasa un parámetro
+PER_PAGE=${1:-100}  # Valor por defecto es 100 si no se pasa un parámetro
 
 # Definir usuario y contraseña INETUM
 USERNAME="marcos.pajon@inetum.com"
@@ -39,8 +39,9 @@ encoded_password_mandalor=$(urlencode "$PASSWORD_MANDALOR")
 get_projects() {
   local gitlab_url=$1
   local gitlab_token=$2
-  curl -s --insecure --noproxy '*' --header "PRIVATE-TOKEN: $gitlab_token" "$gitlab_url/api/v4/projects?per_page=$PER_PAGE"
-
+  local page=$3
+  local per_page=$4
+  curl -s --insecure --noproxy '*' --header "PRIVATE-TOKEN: $gitlab_token" "$gitlab_url/api/v4/projects?page=$page&per_page=$per_page"
 }
 
 # Función para clonar un proyecto
@@ -63,7 +64,6 @@ create_project() {
   curl -s --insecure --request POST --header "PRIVATE-TOKEN: $gitlab_token" --header "Content-Type: application/json" \
     --data "{ \"name\": \"$project_name\", \"namespace_id\": $group_id }" \
     "$gitlab_url/api/v4/projects" > /dev/null 2>&1
-
 }
 
 # Función para empujar un repositorio a la instancia de destino
@@ -77,10 +77,6 @@ push_project() {
 ####################################################################################################################################################################
 
 echo ""
-echo "# Obtener la lista de proyectos desde la instancia fuente"
-# Obtener la lista de proyectos desde la instancia fuente
-projects=$(get_projects "$SOURCE_GITLAB_URL" "$SOURCE_GITLAB_TOKEN")
-
 echo "# Obtener el ID del grupo de destino"
 # Obtener el ID del grupo de destino
 destination_group=$(curl -s --insecure --header "PRIVATE-TOKEN: $DESTINATION_GITLAB_TOKEN" "$DESTINATION_GITLAB_URL/api/v4/groups/$(echo $DESTINATION_GROUP_PATH | sed 's/\//%2F/g')")
@@ -94,51 +90,63 @@ if [ -z "$destination_group_id" ]; then
   exit 1
 fi
 
-# Contador para el elemento actual
+echo "# Obtener la lista de proyectos desde la instancia fuente"
+# Inicializar el contador
 contador=0
-total=$(echo "$projects" | jq '. | length')
+page=1
 
-# Iterar sobre los proyectos y sincronizarlos
-echo "$projects" | jq -c '.[]' | while read project; do
-  #echo "$project"
-  ((contador++))
-  project_id=$(echo "$project" | jq -r '.id')
-  project_name=$(echo "$project" | jq -r '.path')
-  repo_url=$(echo "$project" | jq -r '.http_url_to_repo')
-  echo ""
-  echo "# ---------------------------------------"
-  echo "# Sincronizando proyecto $contador/$total : $project_name"
-  echo "# ---------------------------------------"
-
-  # Clonar el proyecto desde la instancia fuente
-  echo "# Clonar el proyecto desde la instancia fuente"
-  echo "# clone_project $repo_url $project_name"
-  clone_project "$repo_url" "$project_name"
-
-  # Comprobar si el proyecto existe en la instancia de destino
-  echo "# Comprobar si el proyecto existe en la instancia de destino"
-  destination_project=$(curl --insecure --header "PRIVATE-TOKEN: $DESTINATION_GITLAB_TOKEN" "$DESTINATION_GITLAB_URL/api/v4/projects/$(echo $DESTINATION_GROUP_PATH/$project_name | sed 's/\//%2F/g')")
-  echo "destination_project $(echo $destination_project | jq -r '.message')"
-  echo "# destination_project.message: $(echo "$destination_project" | jq -r '.message')"
-
-  if [[ $(echo "$destination_project" | jq -r '.message') == "404 Project Not Found" || $(echo "$destination_project" | jq -r '.error') == "404 Not Found" ]]; then
-    echo "# create_project $DESTINATION_GITLAB_URL $DESTINATION_GITLAB_TOKEN $project_name $destination_group_id"
-    create_project "$DESTINATION_GITLAB_URL" "$DESTINATION_GITLAB_TOKEN" "$project_name" "$destination_group_id"
+# Obtener la lista de proyectos desde la instancia fuente
+while : ; do
+  response=$(get_projects "$SOURCE_GITLAB_URL" "$SOURCE_GITLAB_TOKEN" "$page" "$PER_PAGE")
+  if [[ -z "$response" || "$response" == "[]" ]]; then
+    break
   fi
 
-  # Obtener la URL del repositorio de destino
-  echo "# Obtener la URL del repositorio de destino"
-  destination_repo_url=$(curl -s --insecure --header "PRIVATE-TOKEN: $DESTINATION_GITLAB_TOKEN" "$DESTINATION_GITLAB_URL/api/v4/projects/$(echo $DESTINATION_GROUP_PATH/$project_name | sed 's/\//%2F/g')" | jq -r '.http_url_to_repo')
-  echo "# destination_repo_url $destination_repo_url"
+  # Contar el total de proyectos obtenidos
+  total_page=$(echo "$response" | jq '. | length')
 
-  # Empujar el proyecto al servidor de destino  
-  echo "# Empujar el proyecto al servidor de destino"
-  echo "# project_name $project_name"
-  echo "# destination_repo_url $destination_repo_url"
-  push_project "$project_name" "$destination_repo_url"
+  echo "$response" | jq -c '.[]' | while read project; do
+    #echo "$project"
+    ((contador++))
+    project_id=$(echo "$project" | jq -r '.id')
+    project_name=$(echo "$project" | jq -r '.path')
+    repo_url=$(echo "$project" | jq -r '.http_url_to_repo')
+    echo ""
+    echo "# ---------------------------------------"
+    echo "# Sincronizando proyecto $contador/$total_page : $project_name"
+    echo "# ---------------------------------------"
 
-  # Limpiar el repositorio clonado localmente
-  rm -rf "$project_name.git"
+    # Clonar el proyecto desde la instancia fuente
+    echo "# Clonar el proyecto desde la instancia fuente"
+    echo "# clone_project $repo_url $project_name"
+    clone_project "$repo_url" "$project_name"
+
+    # Comprobar si el proyecto existe en la instancia de destino
+    echo "# Comprobar si el proyecto existe en la instancia de destino"
+    destination_project=$(curl -s --insecure --header "PRIVATE-TOKEN: $DESTINATION_GITLAB_TOKEN" "$DESTINATION_GITLAB_URL/api/v4/projects/$(echo $DESTINATION_GROUP_PATH/$project_name | sed 's/\//%2F/g')")
+    echo "destination_project $(echo $destination_project | jq -r '.message')"
+    echo "# destination_project.message: $(echo "$destination_project" | jq -r '.message')"
+
+    if [[ $(echo "$destination_project" | jq -r '.message') == "404 Project Not Found" || $(echo "$destination_project" | jq -r '.error') == "404 Not Found" ]]; then
+      echo "# create_project $DESTINATION_GITLAB_URL $DESTINATION_GITLAB_TOKEN $project_name $destination_group_id"
+      create_project "$DESTINATION_GITLAB_URL" "$DESTINATION_GITLAB_TOKEN" "$project_name" "$destination_group_id"
+    fi
+
+    # Obtener la URL del repositorio de destino
+    echo "# Obtener la URL del repositorio de destino"
+    destination_repo_url=$(curl -s --insecure --header "PRIVATE-TOKEN: $DESTINATION_GITLAB_TOKEN" "$DESTINATION_GITLAB_URL/api/v4/projects/$(echo $DESTINATION_GROUP_PATH/$project_name | sed 's/\//%2F/g')" | jq -r '.http_url_to_repo')
+
+    # Empujar el proyecto al servidor de destino  
+    echo "# Empujar el proyecto al servidor de destino"
+    echo "# project_name $project_name"
+    echo "# destination_repo_url $destination_repo_url"
+    push_project "$project_name" "$destination_repo_url"
+
+    # Limpiar el repositorio clonado localmente
+    rm -rf "$project_name.git"
+  done
+
+  ((page++))
 done
 
 echo ""
