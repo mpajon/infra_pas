@@ -56,6 +56,23 @@ Cambiar los permisos al direcorio _jenkins_
 
 El proxy se establece en el primer arranque
 
+Pipeline Utility Steps para poder usar readMavenPom
+
+Scripts not permitted to use method org.apache.maven.model.Model getArtifactId --> Navigate to jenkins > Manage jenkins > In-process Script Approv
+
+Permisos 755 a las máquinas de java
+
+    $ sudo chmod +755 -R openjdk11/
+
+Plugins
+
+Config File Provider Plugin --> Para poder usar ficheros de configuración como el settings.xml de maven
+Pipeline Maven Integration --> Para poder usar el withMaven en el pipeline
+SSH Agent  --> para poder usar conexiones ssh
+http request --> para poder hacer smoke test
+
+
+
 Instalar en la imagen el bzip2 para poder usar phantomj en la compilación de los front
 
     $ docker exec -it -u root jenkins /bin/bash
